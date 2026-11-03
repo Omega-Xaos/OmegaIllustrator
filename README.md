@@ -46,7 +46,7 @@ dotnet publish .\src\OmegaIllustrator.Web\OmegaIllustrator.Web.csproj -c Release
 - API-профили используют ключи, добавленные самим владельцем в `/ai`. ChatGPT Plus не включает обычные API-вызовы: биллинг ChatGPT и API Platform раздельный.
 - Локальный Codex CLI/app-server не подключён. Вход ChatGPT OAuth и использование Codex как отдельного agent runtime — разные интеграции.
 - Доступность моделей, бесплатная квота и успешность генерации зависят от стороннего провайдера. Валидация неудачного AI-плана включает offline fallback.
-- До публичной публикации нужно проверить права на исходные SVG. Сейчас репозитории предназначены для приватного обзора работодателем.
+- Репозитории открыты для технического ознакомления. Отдельный LICENSE не добавлен, поэтому публикация не предоставляет автоматически права на коммерческое переиспользование кода или иллюстраций. Перед повторным использованием материалов проверьте права и получите необходимые разрешения.
 
 Ссылки на официальные правила: [использование ChatGPT plan в приложениях](https://help.openai.com/en/articles/20001542-using-your-chatgpt-plan-in-other-apps-and-sites), [раздельный биллинг ChatGPT и API](https://help.openai.com/en/articles/9039756-managing-billing-for-chatgpt-and-the-api-platform), [Sign in with ChatGPT для локальных open-source приложений](https://developers.openai.com/siwc/token-sharing-open-source).
 
