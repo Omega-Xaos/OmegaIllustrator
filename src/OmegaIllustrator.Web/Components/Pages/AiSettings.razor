@@ -1,0 +1,393 @@
+@page "/ai"
+@rendermode InteractiveServer
+@using Omega.AI.Gateway.Contracts
+@using Omega.AI.Gateway.Providers.ChatGptOAuth
+@using OmegaIllustrator.Web.Services
+@inject ChatGptOAuthAuthorizationService Authorization
+@inject IChatGptOAuthCredentialStore Credentials
+@inject IAiGateway Gateway
+@inject StableHostIdProvider HostId
+@inject SelectedAiModelStore SelectedModelStore
+@inject SelectedAiProfileStore SelectedProfileStore
+@inject ProtectedAiApiProfileStore ApiProfiles
+
+<PageTitle>Подключение ИИ — Omega Illustrator</PageTitle>
+<main class="app-shell ai-settings">
+    <header>
+        <div><span class="eyebrow">OMEGA ILLUSTRATOR</span><h1>Подключение ИИ</h1></div>
+        <a href="/">Вернуться к редактору</a>
+    </header>
+
+    <section class="panel ai-settings-panel">
+        <h2>Активное подключение</h2>
+        <p>Выбранный профиль и модель будут использоваться при подборе композиции.</p>
+        <label for="ai-profile">Провайдер</label>
+        <select id="ai-profile" @bind="ActiveProfileId" @bind:after="ActivateProfile">
+            <option value="chatgpt">ChatGPT — официальный OAuth</option>
+            @foreach (var profile in Profiles)
+            {
+                <option value="@profile.Id">@profile.DisplayName — @ProviderDisplayName(profile.ProviderKind)</option>
+            }
+        </select>
+        <div class="ai-actions">
+            <button class="primary" disabled="@Busy" @onclick="CheckActive">Проверить соединение и загрузить модели</button>
+            @if (ActiveProfileId != "chatgpt")
+            {
+                <button @onclick="EditActiveProfile">Изменить профиль</button>
+            }
+        </div>
+        @if (!string.IsNullOrWhiteSpace(Status))
+        {
+            <p class="message">@Status</p>
+        }
+        @if (Models.Count > 0)
+        {
+            <label for="ai-model">Модель для подбора композиции</label>
+            <select id="ai-model" @bind="SelectedModelId" @bind:after="SaveSelectedModel">
+                @foreach (var model in Models)
+                {
+                    <option value="@model.Id">@(string.IsNullOrWhiteSpace(model.DisplayName) ? model.Id : $"{model.DisplayName} ({model.Id})")</option>
+                }
+            </select>
+            <p class="note">В списке показаны модели, которые API вернул для этого профиля. Доступность зависит от самого провайдера и его аккаунта.</p>
+        }
+
+        <hr />
+        <h2>ChatGPT через официальный OAuth</h2>
+        <p>Вход открывается в системном браузере и не требует API-ключа. Доступ определяется правилами OpenAI и лимитами аккаунта.</p>
+        @if (Connected)
+        {
+            <p class="message">Подключено@(Email is null ? "" : $": {Email}")</p>
+            <div class="ai-actions">
+                <button @onclick="UseChatGpt">Использовать ChatGPT</button>
+                <button @onclick="Disconnect">Отключить ChatGPT</button>
+            </div>
+        }
+        else
+        {
+            <button class="primary" disabled="@Busy" @onclick="Connect">@(Busy ? "Ожидание входа в браузере…" : "Подключить ChatGPT")</button>
+        }
+
+        <hr />
+        <h2>Подключения через API</h2>
+        <p>Добавьте API-профиль и выберите протокол сервиса. Поддерживаются OpenAI-совместимые API, Anthropic Messages API и Google Gemini API. Для остальных сервисов подходит режим OpenAI-compatible, если сервис поддерживает этот формат запросов.</p>
+        <p class="note">Ключ вводится здесь и хранится в защищённом виде на сервере. После сохранения его нельзя прочитать из настроек; при редактировании оставьте поле пустым, чтобы сохранить текущий ключ.</p>
+
+        <div class="api-form">
+            <label for="api-name">Название подключения</label>
+            <input id="api-name" @bind="ApiDisplayName" maxlength="80" placeholder="Например, OpenRouter или локальная модель" />
+
+            <label for="api-provider-kind">Протокол API</label>
+            <select id="api-provider-kind" @bind="ApiProviderKind" @bind:after="ProviderKindChanged">
+                <option value="openai-compatible">OpenAI-compatible</option>
+                <option value="anthropic-messages">Anthropic Messages</option>
+                <option value="google-gemini">Google Gemini</option>
+            </select>
+
+            <label for="api-base-url">Базовый URL API</label>
+            <input id="api-base-url" @bind="ApiBaseUrl" maxlength="2048" placeholder="@ApiBaseUrlPlaceholder" />
+            <span class="field-hint">@ApiBaseUrlHint</span>
+
+            <label for="api-key">API-ключ</label>
+            <input id="api-key" type="password" @bind="ApiKey" maxlength="8192" autocomplete="new-password" placeholder="@(EditingProfileId is null ? "Введите ключ" : "Оставьте пустым, чтобы не менять сохранённый ключ")" />
+
+            @if (ApiProviderKind == "openai-compatible")
+            {
+                <label for="api-header-name">Заголовок, в котором передавать ключ</label>
+                <input id="api-header-name" @bind="ApiSecretHeaderName" maxlength="100" placeholder="Authorization" />
+
+                <label for="api-header-prefix">Префикс перед ключом</label>
+                <input id="api-header-prefix" @bind="ApiSecretHeaderPrefix" maxlength="64" placeholder="Bearer " />
+                <span class="field-hint">Для Bearer используйте <code>Authorization</code> и префикс <code>Bearer </code>; для собственного заголовка оставьте подходящий префикс.</span>
+            }
+
+            <div class="ai-actions">
+                <button class="primary" disabled="@Busy" @onclick="SaveApiProfile">@(Busy ? "Сохранение…" : EditingProfileId is null ? "Сохранить API-профиль" : "Сохранить изменения")</button>
+                <button @onclick="CreateNewProfile">Новый профиль</button>
+            </div>
+        </div>
+
+        @if (Profiles.Count > 0)
+        {
+            <h3>Сохранённые API-профили</h3>
+            <div class="api-profile-list">
+                @foreach (var profile in Profiles)
+                {
+                    <div class="api-profile-row">
+                        <button class="profile-select @(ActiveProfileId == profile.Id ? "active" : "")" @onclick="() => SelectProfile(profile.Id)">
+                            <strong>@profile.DisplayName</strong><span>@profile.BaseUrl</span><small>Ключ сохранён · @ProviderDisplayName(profile.ProviderKind)</small>
+                        </button>
+                        <button @onclick="() => EditProfile(profile)">Изменить</button>
+                        <button class="danger" disabled="@Busy" @onclick="() => DeleteProfile(profile.Id)">Удалить</button>
+                    </div>
+                }
+            </div>
+        }
+    </section>
+</main>
+
+@code {
+    private bool Connected;
+    private bool Busy;
+    private string? Email;
+    private string ActiveProfileId = "chatgpt";
+    private string SelectedModelId = "";
+    private string Status = "";
+    private string? EditingProfileId;
+    private string ApiDisplayName = "";
+    private string ApiProviderKind = "openai-compatible";
+    private string ApiBaseUrl = "";
+    private string ApiKey = "";
+    private string ApiSecretHeaderName = "Authorization";
+    private string ApiSecretHeaderPrefix = "Bearer ";
+    private List<AiApiProfileSummary> Profiles = [];
+    private List<AiModelInfo> Models = [];
+    private string ApiBaseUrlPlaceholder => ApiProviderKind switch
+    {
+        "anthropic-messages" => "https://api.anthropic.com",
+        "google-gemini" => "https://generativelanguage.googleapis.com",
+        _ => "https://api.example.com/v1"
+    };
+    private string ApiBaseUrlHint => ApiProviderKind switch
+    {
+        "anthropic-messages" => "Укажите базовый адрес без /v1: приложение использует /v1/models и /v1/messages.",
+        "google-gemini" => "Укажите базовый адрес без /v1beta: приложение использует каталог и методы Gemini v1beta.",
+        _ => "Укажите базовый адрес OpenAI-compatible API; он обычно заканчивается на /v1."
+    };
+
+    protected override async Task OnInitializedAsync()
+    {
+        Profiles = (await ApiProfiles.ListAsync()).ToList();
+        ActiveProfileId = await SelectedProfileStore.GetAsync();
+        if (ActiveProfileId != "chatgpt" && Profiles.All(profile => profile.Id != ActiveProfileId))
+        {
+            ActiveProfileId = "chatgpt";
+            await SelectedProfileStore.SaveAsync(ActiveProfileId);
+        }
+
+        SelectedModelId = await SelectedModelStore.GetAsync() ?? "";
+        var credential = await Credentials.GetAsync("chatgpt");
+        Connected = credential is not null;
+        Email = credential?.Email;
+        if (ActiveProfileId != "chatgpt") LoadProfileIntoForm(Profiles.First(profile => profile.Id == ActiveProfileId));
+    }
+
+    private async Task ActivateProfile()
+    {
+        await SelectedProfileStore.SaveAsync(ActiveProfileId);
+        Models.Clear();
+        Status = "";
+    }
+
+    private async Task SelectProfile(string profileId)
+    {
+        ActiveProfileId = profileId;
+        await ActivateProfile();
+    }
+
+    private async Task UseChatGpt()
+    {
+        ActiveProfileId = "chatgpt";
+        await ActivateProfile();
+    }
+
+    private async Task Connect()
+    {
+        Busy = true;
+        Status = "Завершите вход и подтвердите разрешения в открывшемся браузере.";
+        await InvokeAsync(StateHasChanged);
+        try
+        {
+            await Authorization.BeginSignInAsync("chatgpt", HostId.Get());
+            var credential = await Authorization.WaitForSignInAsync("chatgpt");
+            Connected = true;
+            Email = credential.Email;
+            ActiveProfileId = "chatgpt";
+            await SelectedProfileStore.SaveAsync(ActiveProfileId);
+            Status = "OAuth-подключение завершено. Проверьте соединение, чтобы получить список моделей.";
+        }
+        catch
+        {
+            Status = "Не удалось завершить подключение. Проверьте вход в браузере и попробуйте снова.";
+        }
+        finally { Busy = false; }
+    }
+
+    private async Task CheckActive()
+    {
+        Busy = true;
+        Models.Clear();
+        try
+        {
+            if (ActiveProfileId == "chatgpt" && !Connected)
+            {
+                Status = "Сначала подключите ChatGPT через OAuth.";
+                return;
+            }
+
+            if (ActiveProfileId != "chatgpt" && !Profiles.Any(profile => profile.Id == ActiveProfileId))
+            {
+                Status = "Сохранённый API-профиль не найден. Создайте его или выберите другой.";
+                return;
+            }
+
+            var connection = await Gateway.TestConnectionAsync(ActiveProfileId);
+            if (!connection.Succeeded)
+            {
+                Status = "Провайдер не подтвердил соединение или не предоставляет каталог моделей по API.";
+                return;
+            }
+
+            await LoadModels();
+            Status = Models.Count > 0
+                ? $"Соединение работает. Загружено моделей: {Models.Count}."
+                : "Соединение отвечает, но список моделей пуст.";
+        }
+        catch
+        {
+            Status = "Проверка не выполнена. Проверьте URL, ключ, заголовок авторизации и доступность каталога моделей.";
+        }
+        finally { Busy = false; }
+    }
+
+    private async Task LoadModels()
+    {
+        Models = (await Gateway.GetModelsAsync(ActiveProfileId))
+            .Where(model => !string.IsNullOrWhiteSpace(model.Id))
+            .GroupBy(model => model.Id, StringComparer.Ordinal)
+            .Select(group => group.First())
+            .ToList();
+        if (Models.Count == 0)
+        {
+            SelectedModelId = "";
+            return;
+        }
+
+        if (!Models.Any(model => model.Id == SelectedModelId))
+            SelectedModelId = Models.FirstOrDefault(model => model.Id == "gpt-6-luna")?.Id ?? Models[0].Id;
+        await SelectedModelStore.SaveAsync(SelectedModelId);
+    }
+
+    private async Task SaveSelectedModel()
+    {
+        if (Models.Any(model => model.Id == SelectedModelId))
+            await SelectedModelStore.SaveAsync(SelectedModelId);
+    }
+
+    private async Task SaveApiProfile()
+    {
+        Busy = true;
+        try
+        {
+            var saved = await ApiProfiles.SaveAsync(
+                EditingProfileId,
+                ApiDisplayName,
+                ApiProviderKind,
+                ApiBaseUrl,
+                ApiKey,
+                ApiSecretHeaderName,
+                ApiSecretHeaderPrefix);
+            ApiKey = "";
+            EditingProfileId = saved.Id;
+            Profiles = (await ApiProfiles.ListAsync()).ToList();
+            ActiveProfileId = saved.Id;
+            await SelectedProfileStore.SaveAsync(ActiveProfileId);
+            Status = "Профиль сохранён. Проверяю соединение и загружаю список моделей…";
+            await CheckActive();
+        }
+        catch (ArgumentException)
+        {
+            Status = "Профиль не сохранён. Проверьте имя, базовый URL, API-ключ и заголовок.";
+        }
+        catch
+        {
+            Status = "Не удалось сохранить профиль или получить список моделей.";
+        }
+        finally { Busy = false; }
+    }
+
+    private void CreateNewProfile()
+    {
+        EditingProfileId = null;
+        ApiDisplayName = "";
+        ApiProviderKind = "openai-compatible";
+        ApiBaseUrl = "";
+        ApiKey = "";
+        ApiSecretHeaderName = "Authorization";
+        ApiSecretHeaderPrefix = "Bearer ";
+        Status = "Создайте новый API-профиль.";
+    }
+
+    private void EditActiveProfile()
+    {
+        var profile = Profiles.FirstOrDefault(item => item.Id == ActiveProfileId);
+        if (profile is not null) EditProfile(profile);
+    }
+
+    private void EditProfile(AiApiProfileSummary profile) => LoadProfileIntoForm(profile);
+
+    private void LoadProfileIntoForm(AiApiProfileSummary profile)
+    {
+        EditingProfileId = profile.Id;
+        ApiDisplayName = profile.DisplayName;
+        ApiProviderKind = profile.ProviderKind;
+        ApiBaseUrl = profile.BaseUrl;
+        ApiKey = "";
+        ApiSecretHeaderName = profile.SecretHeaderName;
+        ApiSecretHeaderPrefix = profile.SecretHeaderPrefix;
+        Status = "Профиль загружен для редактирования. Сохранённый ключ скрыт.";
+    }
+
+    private void ProviderKindChanged()
+    {
+        if (ApiProviderKind == "openai-compatible")
+        {
+            ApiSecretHeaderName = "Authorization";
+            ApiSecretHeaderPrefix = "Bearer ";
+        }
+        else
+        {
+            ApiSecretHeaderName = ApiProviderKind == "anthropic-messages" ? "x-api-key" : "x-goog-api-key";
+            ApiSecretHeaderPrefix = "";
+        }
+    }
+
+    private static string ProviderDisplayName(string providerKind) => providerKind switch
+    {
+        "anthropic-messages" => "Anthropic Messages",
+        "google-gemini" => "Google Gemini",
+        _ => "OpenAI-compatible"
+    };
+
+    private async Task DeleteProfile(string profileId)
+    {
+        Busy = true;
+        try
+        {
+            await ApiProfiles.DeleteAsync(profileId);
+            Profiles = (await ApiProfiles.ListAsync()).ToList();
+            if (ActiveProfileId == profileId)
+            {
+                ActiveProfileId = "chatgpt";
+                await SelectedProfileStore.SaveAsync(ActiveProfileId);
+                Models.Clear();
+            }
+            if (EditingProfileId == profileId) CreateNewProfile();
+            Status = "API-профиль и его защищённый ключ удалены.";
+        }
+        catch { Status = "Не удалось удалить API-профиль."; }
+        finally { Busy = false; }
+    }
+
+    private async Task Disconnect()
+    {
+        await Credentials.DeleteAsync("chatgpt");
+        Connected = false;
+        Email = null;
+        if (ActiveProfileId == "chatgpt")
+        {
+            Models.Clear();
+        }
+        Status = "OAuth-токены ChatGPT удалены из защищённого локального хранилища.";
+    }
+}

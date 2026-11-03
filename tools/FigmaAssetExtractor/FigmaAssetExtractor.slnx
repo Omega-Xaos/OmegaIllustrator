@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="FigmaAssetExtractor/FigmaAssetExtractor.csproj" />
+  <Project Path="Zafiro.FigReader.Core/Zafiro.FigReader.Core.csproj" />
+</Solution>

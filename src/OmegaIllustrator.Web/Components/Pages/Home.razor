@@ -1,0 +1,336 @@
+@page "/"
+@rendermode InteractiveServer
+@implements IAsyncDisposable
+@using System.Text.Json
+@using System.Text
+@using System.Xml.Linq
+@using System.Globalization
+@using OmegaIllustrator.Web.Services
+@using OmegaIllustrator.Core.Suggestions
+@using Omega.AI.Gateway.Errors
+@using Microsoft.AspNetCore.Components.Web
+@inject IWebHostEnvironment Host
+@inject IJSRuntime JS
+@inject Omega.AI.Gateway.Contracts.IAiGateway Gateway
+@inject SceneSuggestionService Suggestions
+@inject SelectedAiModelStore SelectedModelStore
+@inject SelectedAiProfileStore SelectedProfileStore
+@inject ProtectedAiApiProfileStore ApiProfiles
+@inject Omega.AI.Gateway.Providers.ChatGptOAuth.IChatGptOAuthCredentialStore Credentials
+@inject ILogger<Home> Logger
+
+<PageTitle>Omega Illustrator</PageTitle>
+<main class="app-shell">
+    <header><div><span class="eyebrow">OMEGA LAB</span><h1>Illustrator</h1></div><div class="actions"><a class="quiet" href="/ai">Подключение ИИ</a><button class="quiet" @onclick="Reset">Новая композиция</button><button class="primary" @onclick="Export">Экспорт SVG</button></div></header>
+    <div class="workspace">
+        <aside class="panel left">
+            <nav><button class="@(Mode=="objects"?"active":"")" @onclick="SetObjectsMode">По объектам</button><button class="@(Mode=="meaning"?"active":"")" @onclick="SetMeaningMode">По смыслу</button></nav>
+            @if (Mode == "objects") { <label>Предметы</label><textarea @bind="Input" @bind:event="oninput" placeholder="книга, лампа, телефон"></textarea><button class="primary wide" @onclick="BuildByNames">Собрать композицию</button> }
+            else { <label>Тема или заголовок</label><textarea @bind="Input" @bind:event="oninput" placeholder="Идеи для продуктивной учёбы"></textarea><button class="primary wide" @onclick="BuildByMeaning">@(AiConnected?"Подобрать объекты с ИИ":"Подобрать объекты")</button><p class="note">@(AiConnected?"ИИ подключён. При ошибке запроса будет предложена смысловая офлайн-композиция.":"ИИ не подключён. Доступна смысловая офлайн-композиция.")</p> }
+            @if (!string.IsNullOrWhiteSpace(Message)) { <p class="message">@Message</p> }
+            <label>Каталог</label><div class="asset-grid">@foreach(var item in AvailableConcepts){<button class="asset" title="Добавить @item.Name" @onclick="()=>Add(item)"><img src="@AssetHref(Variant(item))"/><span>@item.Name</span></button>}</div>
+        </aside>
+        <section class="canvas-panel"><div class="canvas-tools"><span>@Width × @Height</span><span>@Items.Count объектов</span></div><svg id="scene" viewBox="0 0 @Width @Height" style="aspect-ratio:@(F(Width)) / @(F(Height))" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100%" height="100%" fill="@PaletteBg"/>
+            @foreach(var item in Items.Where(x=>ShowBackground||x.Asset.Role!="background").OrderBy(x=>x.Z)){<g data-scene-item="@item.Id" data-x="@F(item.X)" data-y="@F(item.Y)" data-relevance="@F(item.Relevance)" data-importance="@F(item.Importance)" data-complexity="@F(item.Complexity)" data-function="@item.SceneFunction" transform="translate(@F(item.X) @F(item.Y))" class="@(Selected==item?"selected":"")" @onclick="()=>Selected=item" @onclick:stopPropagation="true"><image href="@AssetHref(item.Asset,item.ColorAssignments)" x="@F(-item.W/2)" y="@F(-item.H/2)" width="@F(item.W)" height="@F(item.H)" preserveAspectRatio="xMidYMid meet" transform="rotate(@F(item.Rotation))"/></g>}
+        </svg></section>
+        <aside class="panel right"><h2>Свойства сцены</h2><label>Формат</label><select @bind="Format" @bind:after="ChangeFormat"><option>Квадрат 1000×1000</option><option>Горизонтальный 1200×630</option><option>Вертикальный 800×1200</option></select><label>Размер объектов</label><select @bind="Size" @bind:after="ChangeSize"><option>S</option><option>L</option></select><label>Наполненность</label><select @bind="RequestedDensity"><option value="auto">По смыслу запроса</option><option value="airy">Воздушная</option><option value="balanced">Сбалансированная</option><option value="rich">Насыщенная</option></select><p class="note">Плотность меняет расстояния и заполнение поля; размер и пропорции предметов сохраняются.</p><label>Палитра</label><select @bind="Palette" @bind:after="ChangePalette"><option value="auto">Авто по настроению</option><option value="palette-1">Сиреневая</option><option value="palette-2">Персиковая</option><option value="palette-3">Бирюзовая</option></select><label>Шаблон</label><select @bind="Layout" @bind:after="Arrange"><option value="auto">Авто</option><option value="clustered">Собранно</option><option value="offset">Со смещением</option><option value="under-heading">Под заголовок</option></select><label class="check"><input type="checkbox" @bind="ShowBackground"/> Фоновые предметы</label><hr/><h2>Слои</h2>@foreach(var item in Items.OrderByDescending(i=>i.Z)){<div class="layer"><button @onclick="()=>Selected=item">@item.Asset.Name · @item.Asset.Role</button><button @onclick="()=>Raise(item)">↑</button><button @onclick="()=>Lower(item)">↓</button><button @onclick="()=>ToggleRole(item)">Роль</button><button @onclick="()=>Remove(item)">×</button></div>}<hr/><button disabled="@(Selected is null)" @onclick="Rotate">Повернуть 15°</button><button disabled="@(Selected is null)" @onclick="Duplicate">Дублировать</button><button disabled="@(Selected is null)" @onclick="Delete">Удалить</button></aside>
+    </div>
+</main>
+
+@code {
+    private record Asset(string Id,string Concept,string Name,string Role,string Size,string Svg,string ViewBox,List<string>? Tags=null,List<AssetColorRole>? ColorRoles=null);
+    private sealed record AssetColorRole(string SourceColor,string Role,string Behavior);
+    private sealed class SceneItem { public string Id{get;}=Guid.NewGuid().ToString("N"); public required Asset Asset {get;set;} public double X{get;set;} public double Y{get;set;} public double W{get;set;}=260; public double H{get;set;}=220; public double Rotation{get;set;} public double Emphasis{get;set;}=1; public double NormalizedX{get;set;}=0.5; public double NormalizedY{get;set;}=0.5; public string Depth{get;set;}="middle"; public double Relevance{get;set;}=0.7; public double Importance{get;set;}=0.7; public double Complexity{get;set;}=0.5; public string SceneFunction{get;set;}="support"; public IReadOnlyDictionary<string,string> ColorAssignments{get;set;}=new Dictionary<string,string>(StringComparer.Ordinal); public double Z{get;set;} }
+    private static readonly IReadOnlyDictionary<string,string> TermAliases=new Dictionary<string,string>(StringComparer.OrdinalIgnoreCase){["книга"]="book",["книги"]="book",["книжка"]="book",["учебник"]="book",["телефон"]="phone",["смартфон"]="phone",["мобильник"]="phone",["пазл"]="puzzle",["пазлы"]="puzzle",["головоломка"]="puzzle",["монета"]="coin",["монеты"]="coin",["наушник"]="headphones",["наушники"]="headphones",["гарнитура"]="headphones",["лампа"]="lamp",["лампу"]="lamp",["светильник"]="lamp",["цветы"]="flowers",["букет"]="flowers",["цветок"]="flowers",["кошелёк"]="wallet",["кошелек"]="wallet",["бумажник"]="wallet",["папка"]="folder",["папки"]="folder",["ручка"]="pen",["ручку"]="pen",["шариковая"]="pen"};
+    private List<Asset> Catalog=[]; private List<SceneItem> Items=[]; private List<SceneRelationship> Relationships=[]; private readonly List<SceneCompositionMemory> RecentCompositions=[]; private SceneItem? Selected; private SvgPaletteCatalog? Palettes; private string Input=""; private string Message=""; private string Mode="objects"; private string Size="L"; private string Palette="auto"; private string SuggestedPalette="palette-1"; private string RequestedDensity="auto"; private string CompositionDensity="balanced"; private string Layout="auto"; private string Format="Квадрат 1000×1000"; private bool ShowBackground=true; private bool AiConnected; private SceneCompositionIntent CompositionIntent=new("general_scene","neutral_or_user_defined","balanced_natural_grouping","balanced_spacing"); private double Width=1000,Height=1000; private readonly Dictionary<(string AssetId,string PaletteId,string ColorAssignments),string> SvgCache=[]; private IJSObjectReference? _sceneEditor; private DotNetObjectReference<Home>? _selfReference;
+    private static readonly IReadOnlyList<ScenePaletteOption> DefaultPaletteOptions=
+    [
+        new("palette-1","сиреневая: мягкая, спокойная, творческая","#D7CDF5",["#F9ECB0","#F9A3AA","#FFE3E1"],"#AA9BF0","#7864D7",new Dictionary<string,string>{{"background.bg1","#D7CDF5"},{"background.bg2","#AA9BF0"},{"background.bg3","#7864D7"},{"objectOnly.accent1","#F9ECB0"},{"objectOnly.accent2","#F9A3AA"},{"objectOnly.accent3","#FFE3E1"},{"neutral.outline","#181817"},{"neutral.white","#FFFFFF"}}),
+        new("palette-2","персиковая: тёплая, дружелюбная, энергичная","#FDD7B9",["#F9ECB0","#80DADA","#BEEBEB"],"#FAC896","#D27532",new Dictionary<string,string>{{"background.bg1","#FDD7B9"},{"background.bg2","#FAC896"},{"background.bg3","#D27532"},{"objectOnly.accent1","#F9ECB0"},{"objectOnly.accent2","#80DADA"},{"objectOnly.accent3","#BEEBEB"},{"neutral.outline","#181817"},{"neutral.white","#FFFFFF"}}),
+        new("palette-3","бирюзовая: собранная, ясная, спокойная","#BEEBEB",["#FFD4F2","#6D7BFC","#B6C6FE"],"#80DADA","#5ABEBE",new Dictionary<string,string>{{"background.bg1","#BEEBEB"},{"background.bg2","#80DADA"},{"background.bg3","#5ABEBE"},{"objectOnly.accent1","#FFD4F2"},{"objectOnly.accent2","#6D7BFC"},{"objectOnly.accent3","#B6C6FE"},{"neutral.outline","#181817"},{"neutral.white","#FFFFFF"}})
+    ];
+    private IReadOnlyList<ScenePaletteOption> PaletteOptions=>Palettes?.ToSceneOptions()??DefaultPaletteOptions;
+    private string ActivePalette => Palette=="auto"?SuggestedPalette:Palette;
+    private string PaletteBg => Palettes?.BackgroundColor(ActivePalette) ?? "#D7CDF5";
+    private IEnumerable<Asset> AvailableConcepts=>Catalog.Where(x=>x.Role=="main"&&x.Size==Size);
+    protected override async Task OnInitializedAsync(){var assetsPath=Path.Combine(Host.WebRootPath,"Assets","catalog.json");Catalog=JsonSerializer.Deserialize<List<Asset>>(File.ReadAllText(assetsPath),new JsonSerializerOptions{PropertyNameCaseInsensitive=true})??[];var palettesPath=Path.Combine(Host.WebRootPath,"Assets","Palettes","catalog.json");if(File.Exists(palettesPath))Palettes=SvgPaletteCatalog.FromJson(await File.ReadAllTextAsync(palettesPath));var profileId=await SelectedProfileStore.GetAsync();AiConnected=profileId=="chatgpt"?await Credentials.GetAsync("chatgpt") is not null:await ApiProfiles.GetSummaryAsync(profileId) is {HasApiKey:true};}
+    protected override async Task OnAfterRenderAsync(bool firstRender){if(!firstRender)return;_sceneEditor=await JS.InvokeAsync<IJSObjectReference>("import","./scene-editor.js");_selfReference=DotNetObjectReference.Create(this);await _sceneEditor.InvokeVoidAsync("enableSceneDragging","scene",_selfReference);}
+    [JSInvokable] public async Task SceneItemMoved(string itemId,double x,double y){await InvokeAsync(()=>{var item=Items.FirstOrDefault(candidate=>candidate.Id==itemId);if(item is null)return;item.X=x;item.Y=y;Selected=item;StateHasChanged();});}
+    private Asset Variant(Asset a)=>Catalog.FirstOrDefault(x=>x.Concept==a.Concept&&x.Size==Size&&x.Role==a.Role)??a;
+    private void Add(Asset a)
+    {
+        var asset = Variant(a);
+        var dimensions = asset.ViewBox.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        var sourceWidth = double.Parse(dimensions[^2], CultureInfo.InvariantCulture);
+        var sourceHeight = double.Parse(dimensions[^1], CultureInfo.InvariantCulture);
+        var maxExtent = Math.Min(Width, Height) * 0.26;
+        var scale = maxExtent / Math.Max(sourceWidth, sourceHeight);
+        var topZ = Items.Count == 0 ? 100 : Items.Max(item => item.Z) + 100;
+        var added = new SceneItem
+        {
+            Asset = asset,
+            X = Width / 2,
+            Y = Height / 2,
+            W = sourceWidth * scale,
+            H = sourceHeight * scale,
+            Depth = "near",
+            Emphasis = 1,
+            NormalizedX = 0.5,
+            NormalizedY = 0.5,
+            Z = topZ
+        };
+        Items.Add(added);
+        Selected = added;
+    }
+    private void BuildByNames(){var terms=Input.Split([',',';','\n'],StringSplitOptions.RemoveEmptyEntries|StringSplitOptions.TrimEntries);if(terms.Length==0){Message="Введите названия предметов через запятую.";return;}var found=new List<Asset>();var unknown=new List<string>();foreach(var term in terms){var key=NormalizeTerm(term);var concept=TermAliases.GetValueOrDefault(key)??AvailableConcepts.FirstOrDefault(x=>NormalizeTerm(x.Name)==key||NormalizeTerm(x.Concept)==key)?.Concept;var asset=concept is null?null:AvailableConcepts.FirstOrDefault(x=>x.Concept==concept);if(asset is null)unknown.Add(term);else if(!found.Any(x=>x.Concept==asset.Concept))found.Add(asset);}if(unknown.Count>0){Message=$"Не найдены: {string.Join(", ",unknown)}. Доступны: {string.Join(", ",AvailableConcepts.Select(x=>x.Name).Distinct())}";return;}CompositionIntent=SceneThemePolicy.InferCompositionIntent(Input);Items.Clear();Relationships.Clear();CompositionDensity=RequestedDensity=="auto"?DensityFromCount(found.Count):RequestedDensity;foreach(var a in found)Add(a);Arrange();Message="Композиция собрана из указанных предметов.";}
+    private async Task BuildByMeaning()
+    {
+        if (string.IsNullOrWhiteSpace(Input)) { Message = "Введите тему или заголовок композиции."; return; }
+        CompositionIntent = SceneThemePolicy.InferCompositionIntent(Input);
+        if (!AiConnected) { BuildByMeaningOffline(); return; }
+        try
+        {
+            var available = Catalog.Where(asset => asset.Size == Size)
+                .Select(CreateSuggestionAsset);
+            var suggestion = await Suggestions.SuggestAsync(new SceneSuggestionRequest(
+                Input, available.ToArray(), Size, CanvasFormatId(), Layout, ShowBackground,
+                MaximumObjects: 10, ProfileId: await SelectedProfileStore.GetAsync(), PreferredModelId: await SelectedModelStore.GetAsync(),
+                RequestedDensity: RequestedDensity, RequestedPaletteId: Palette, AvailablePalettes: PaletteOptions,
+                MinimumObjects: 3, RecentCompositions: RecentCompositions.TakeLast(5).ToArray(), CanvasWidth: Width, CanvasHeight: Height));
+            var selected = suggestion.Objects.Select(plan => (Plan: plan, Asset: Catalog.First(asset =>
+                asset.Concept == plan.ConceptId && asset.Role == plan.Role && asset.Size == Size))).ToArray();
+            Items.Clear();
+            Layout = suggestion.LayoutPresetId;
+            CompositionDensity = suggestion.Density;
+            SuggestedPalette = suggestion.PaletteId;
+            Relationships = suggestion.Relationships?.ToList() ?? [];
+            foreach (var (plan, asset) in selected)
+                Items.Add(new SceneItem { Asset = asset, Depth = plan.Depth, Emphasis = plan.Emphasis, NormalizedX = plan.NormalizedX, NormalizedY = plan.NormalizedY, Rotation = plan.RotationDegrees, Relevance = plan.Relevance, Importance = plan.Importance, Complexity = plan.Complexity, SceneFunction = plan.SceneFunction, ColorAssignments = plan.ColorAssignments ?? new Dictionary<string,string>(StringComparer.Ordinal) });
+            Selected = Items.FirstOrDefault(item => item.Asset.Concept == suggestion.FocalConceptId);
+            Arrange();
+            RememberComposition(suggestion);
+            var paletteName = PaletteName(suggestion.PaletteId);
+            var rationale = string.IsNullOrWhiteSpace(suggestion.Rationale) ? "Значимость и связи предметов учтены." : suggestion.Rationale;
+            Message = $"Фокус: {Catalog.First(asset => asset.Concept == suggestion.FocalConceptId).Name}; {suggestion.Objects.Count} предмета, {DensityName(suggestion.Density).ToLowerInvariant()}, палитра {paletteName}. {rationale}";
+        }
+        catch (Exception exception)
+        {
+            Logger.LogWarning(exception, "AI scene suggestion failed; using the curated offline scene planner.");
+            var fallbackNotice = exception is InvalidDataException
+                ? "ИИ вернул ответ, но план нарушил правила композиции; применены смысловые офлайн-правила."
+                : exception is System.Text.Json.JsonException
+                    ? "ИИ вернул ответ, который не удалось прочитать как JSON; применены смысловые офлайн-правила."
+                : DescribeAiFailure(exception);
+            BuildByMeaningOffline(fallbackNotice);
+        }
+    }
+    private static string DescribeAiFailure(Exception exception)
+    {
+        if (exception is not AiGatewayException aiError)
+            return "Запрос к ИИ не выполнен; применены смысловые офлайн-правила.";
+
+        var status = aiError.HttpStatusCode is int code ? $" (HTTP {code})" : "";
+        var reason = aiError.Code switch
+        {
+            AiErrorCode.Authentication => "Провайдер отклонил API-ключ",
+            AiErrorCode.Authorization => "Провайдер отказал в доступе к модели",
+            AiErrorCode.RateLimit => "Провайдер ограничил частоту запросов или бесплатную квоту",
+            AiErrorCode.NetworkFailure => "Не удалось связаться с провайдером",
+            AiErrorCode.Timeout => "Провайдер не ответил вовремя",
+            AiErrorCode.MalformedResponse => "Провайдер вернул некорректный ответ",
+            _ => "Провайдер не выполнил запрос"
+        };
+        return $"{reason}{status}; применены смысловые офлайн-правила.";
+    }
+    private void RememberComposition(SceneSuggestion suggestion)
+    {
+        var spatial = suggestion.Objects.Select(item =>
+        {
+            var xBand = item.NormalizedX < 0.38 ? "left" : item.NormalizedX > 0.62 ? "right" : "center";
+            var yBand = item.NormalizedY < 0.38 ? "top" : item.NormalizedY > 0.62 ? "bottom" : "middle";
+            return $"{item.ConceptId}:{xBand}:{yBand}:{item.Depth}:{item.SceneFunction}";
+        }).Order(StringComparer.Ordinal).ToArray();
+        var memory = new SceneCompositionMemory(
+            suggestion.FocalConceptId ?? "",
+            suggestion.Objects.Select(item => item.ConceptId).Distinct(StringComparer.Ordinal).Order(StringComparer.Ordinal).ToArray(),
+            (suggestion.Relationships ?? []).Select(item => $"{item.SourceConceptId}:{item.Type}:{item.TargetConceptId}").Order(StringComparer.Ordinal).ToArray(),
+            spatial,
+            suggestion.LayoutPresetId);
+        RecentCompositions.Add(memory);
+        if (RecentCompositions.Count > 5) RecentCompositions.RemoveAt(0);
+    }
+    private void BuildByMeaningOffline(string? fallbackNotice = null)
+    {
+        var terms = SceneThemePolicy.NormalizeTerms(Input)
+            .Where(term => term.Length > 2)
+            .Distinct()
+            .ToArray();
+        CompositionIntent = SceneThemePolicy.InferCompositionIntent(terms);
+        var ranked = AvailableConcepts
+            .Where(asset => SceneThemePolicy.IsConceptAllowed(asset.Concept, terms))
+            .Select(asset =>
+            {
+                var tags = asset.Tags?.Select(NormalizeTerm).Append(NormalizeTerm(asset.Name)).Append(NormalizeTerm(asset.Concept)) ?? [];
+                var score = terms.Sum(term => tags.Any(tag => tag == term || tag.Contains(term, StringComparison.Ordinal) || term.Contains(tag, StringComparison.Ordinal)) ? 1 : 0)
+                    + terms.Sum(term => HasThemeAssociation(term, asset.Concept) ? 2 : 0);
+                return (Asset: asset, Score: score, Variation: Random.Shared.NextDouble() * 0.7);
+            })
+            .Where(item => item.Score > 0)
+            .Where(item => SceneThemePolicy.AllowsInFinancialScene(item.Asset.Concept, terms))
+            .OrderByDescending(item => item.Score + item.Variation)
+            .Take(MaximumOfflineObjects())
+            .Select(item => item.Asset)
+            .ToList();
+
+        var preferredFocus = PreferredOfflineFocus(terms);
+        var focusIndex = ranked.FindIndex(asset => asset.Concept == preferredFocus);
+        if (focusIndex > 0) { var focus = ranked[focusIndex]; ranked.RemoveAt(focusIndex); ranked.Insert(0, focus); }
+
+        if (ranked.Count == 0)
+        {
+            Message = fallbackNotice is not null
+                ? "Запрос к ИИ не выполнен; офлайн-подбор не нашёл совпадений. Попробуйте другой текст или режим «По объектам»."
+                : "Офлайн-подбор не нашёл совпадений. Попробуйте точный список предметов.";
+            return;
+        }
+
+        Items.Clear();
+        SuggestedPalette = ChooseOfflinePalette(terms);
+        CompositionDensity = RequestedDensity == "auto" ? DensityFromCount(ranked.Count) : RequestedDensity;
+        Relationships = BuildCuratedRelationships(ranked.Select(asset => asset.Concept).ToHashSet(StringComparer.Ordinal), terms);
+        var accentConcepts = SceneThemePolicy.PreferredAccentConcepts(terms, ranked.Select(asset => asset.Concept), preferredFocus);
+        var layoutPhase = Random.Shared.NextDouble() * Math.Tau;
+        for (var index = 0; index < ranked.Count; index++)
+        {
+            var source = ranked[index];
+            var role = index == 0 || !ShowBackground || accentConcepts.Contains(source.Concept) ? "main" : "background";
+            var asset = Catalog.FirstOrDefault(candidate => candidate.Concept == source.Concept && candidate.Role == role && candidate.Size == Size) ?? source;
+            var angle = layoutPhase + Math.Max(0, index - 1) * 2.399963229728653 + (Random.Shared.NextDouble() - 0.5) * 0.9;
+            var radiusX = 0.22 + Random.Shared.NextDouble() * 0.18;
+            var radiusY = 0.20 + Random.Shared.NextDouble() * 0.16;
+            var x = index == 0 ? 0.5 : Math.Clamp(0.5 + Math.Cos(angle) * radiusX, 0.15, 0.85);
+            var y = index == 0 ? 0.52 : Math.Clamp(0.5 + Math.Sin(angle) * radiusY, 0.15, 0.85);
+            Items.Add(new SceneItem
+            {
+                Asset = asset,
+                Depth = index == 0 ? "middle" : y < 0.36 || source.Concept == "lamp" ? "far" : y > 0.66 ? "near" : "middle",
+                Emphasis = index == 0 ? 1 : Math.Max(0.55, 0.76 - index * 0.025),
+                NormalizedX = x,
+                NormalizedY = y,
+                Relevance = index == 0 ? 1 : Math.Max(0.45, 0.85 - index * 0.04),
+                Importance = index == 0 ? 1 : Math.Max(0.4, 0.78 - index * 0.05),
+                SceneFunction = index == 0 ? "focal" : "support"
+            });
+        }
+        Selected = Items.FirstOrDefault();
+        Arrange();
+        var fallbackFocus = Items.FirstOrDefault(item => item.SceneFunction == "focal")?.Asset.Name ?? "—";
+        Message = $"{fallbackNotice ?? "ИИ не подключён; применены смысловые офлайн-правила."} Фокус: {fallbackFocus}; {Items.Count} предмета; палитра {PaletteName(SuggestedPalette)}.";
+    }
+    private static string NormalizeTerm(string value)=>value.Trim().Normalize(NormalizationForm.FormKC).ToLowerInvariant().Replace('ё','е');
+    private bool HasThemeAssociation(string term,string concept)
+    {
+        var cues=concept switch
+        {
+            "book"=>new[]{"поним","обуч","учеб","консп","материал","знан","чтен","изуч","продуктив","перерыв","отдых","пауза","умиротвор","спокой","тиш","серьез","серьёз"},
+            "puzzle"=>new[]{"задач","решен","логик","поним","обуч","продуктив","серьез","серьёз"},
+            "folder"=>new[]{"проект","работ","документ","дел","организ","задач","продуктив","серьез","серьёз"},
+            "lamp"=>new[]{"работ","фокус","сосредоточ","обуч","иде","сложн","логик","аналит","задач","бизнес","спокой","вечер","уют","отдых","перерыв","умиротвор","тиш","продуктив","серьез","серьёз"},
+            "pen"=>new[]{"консп","запис","работ","план","обуч","проект","финанс"},
+            "coin"=>new[]{"финанс","деньг","бюдж","доход","инвест","финансов"},
+            "wallet"=>new[]{"финанс","деньг","эконом","бюдж","покуп","финансов","продуктив","серьез","серьёз","план","проект"},
+            "headphones"=>new[]{"перерыв","отдых","пауза","тих","музык","расслаб","спокой","умиротвор"},
+            "flowers"=>new[]{"спокой","тиш","перерыв","отдых","гармон","природ","уют","умиротвор","работ","фокус"},
+            "phone"=>new[]{"телефон","смартфон","связ","общен","сообщ","звон","цифров","финанс","бюдж","продуктив","серьез","серьёз","отдых","перерыв","умиротвор"},
+            _=>Array.Empty<string>()
+        };
+        return cues.Any(cue=>term.Contains(cue,StringComparison.Ordinal));
+    }
+    private string PreferredOfflineFocus(IReadOnlyList<string> terms)
+    {
+        var availableConcepts = AvailableConcepts.Select(asset => asset.Concept).ToArray();
+        var financialFocus = SceneThemePolicy.PreferredFinancialFocus(terms, availableConcepts);
+        if (financialFocus is not null) return financialFocus;
+        var restFocus = SceneThemePolicy.PreferredRestFocus(terms, availableConcepts);
+        if (restFocus is not null) return restFocus;
+        if (terms.Any(term=>new[]{"умиротвор","спокой","тих","гармон","serenity","serene","calm","tranquil","quiet"}.Any(cue=>term.Contains(cue,StringComparison.Ordinal))) && availableConcepts.Contains("flowers", StringComparer.Ordinal))return "flowers";
+        if(terms.Any(term=>new[]{"перерыв","отдых","пауза","музык","расслаб","умиротвор","спокой","гармон"}.Any(cue=>term.Contains(cue,StringComparison.Ordinal))))return "headphones";
+        if(terms.Any(term=>HasThemeAssociation(term,"coin")))return terms.Any(term=>HasThemeAssociation(term,"folder"))?"folder":"coin";
+        if(terms.Any(term=>HasThemeAssociation(term,"book")))return "book";
+        if(terms.Any(term=>HasThemeAssociation(term,"folder")))return "folder";
+        if(terms.Any(term=>new[]{"спокой","тиш","уют","гармон"}.Any(cue=>term.Contains(cue,StringComparison.Ordinal))))return "flowers";
+        return AvailableConcepts.FirstOrDefault()?.Concept??"";
+    }
+    private int MaximumOfflineObjects()=>RequestedDensity switch{"airy"=>4,"balanced"=>7,_=>10};
+    private static string DensityFromCount(int count)=>count<=3?"airy":count<=6?"balanced":"rich";
+    private static string ChooseOfflinePalette(IReadOnlyList<string> terms)=>terms.Any(term=>term.Contains("финанс",StringComparison.Ordinal)||term.Contains("делов",StringComparison.Ordinal)||term.Contains("серьез",StringComparison.Ordinal))?"palette-3":terms.Any(term=>term.Contains("отдых",StringComparison.Ordinal)||term.Contains("перерыв",StringComparison.Ordinal)||term.Contains("спокой",StringComparison.Ordinal)||term.Contains("тих",StringComparison.Ordinal)||term.Contains("умиротвор",StringComparison.Ordinal))?"palette-3":terms.Any(term=>term.Contains("тепл",StringComparison.Ordinal)||term.Contains("радост",StringComparison.Ordinal)||term.Contains("энерг",StringComparison.Ordinal))?"palette-2":"palette-1";
+    private static List<SceneRelationship> BuildCuratedRelationships(IReadOnlySet<string> concepts, IReadOnlyList<string> terms)
+    {
+        var focus = SceneThemePolicy.PreferredFinancialFocus(terms, concepts)
+            ?? SceneThemePolicy.PreferredRestFocus(terms, concepts)
+            ?? (concepts.Contains("book") ? "book" : concepts.Contains("folder") ? "folder" : concepts.FirstOrDefault());
+        if (focus is null) return [];
+
+        var intent = SceneThemePolicy.InferCompositionIntent(terms);
+        return concepts
+            .Where(concept => concept != focus)
+            .Select(concept => SceneThemePolicy.RecommendRelationship(concept, focus, concepts, intent))
+            .Where(relation => relation is not null && SceneThemePolicy.AllowsRelationship(relation.SourceConceptId, relation.TargetConceptId, relation.Type))
+            .Select(relation => relation!)
+            .ToList();
+    }
+    private static string PaletteName(string id)=>id switch{"palette-2"=>"персиковая","palette-3"=>"бирюзовая",_=>"сиреневая"};
+    private static string DensityName(string id)=>id switch{"airy"=>"воздушная","rich"=>"насыщенная",_=>"сбалансированная"};
+    private void Arrange(){if(Items.Count==0)return;var geometry=Items.Select(item=>{var dimensions=item.Asset.ViewBox.Split(' ',StringSplitOptions.RemoveEmptyEntries);return new SceneObjectGeometry(double.Parse(dimensions[^2],CultureInfo.InvariantCulture),double.Parse(dimensions[^1],CultureInfo.InvariantCulture),item.Asset.Role,item.NormalizedX,item.Depth,item.Emphasis,item.Rotation,item.Asset.Concept,item.Importance,item.NormalizedY);}).ToArray();var placements=SceneLayoutEngine.Arrange(Width,Height,geometry,CompositionDensity,Layout,Relationships,CompositionIntent);for(var index=0;index<Items.Count;index++){var placement=placements[index];Items[index].X=placement.X;Items[index].Y=placement.Y;Items[index].W=placement.Width;Items[index].H=placement.Height;Items[index].Rotation=placement.RotationDegrees;Items[index].Emphasis=placement.Emphasis;Items[index].Z=placement.ZOrder*100+placement.Emphasis*10;}}
+    private SceneSuggestionAsset CreateSuggestionAsset(Asset asset)
+    {
+        var dimensions = asset.ViewBox.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        var width = double.Parse(dimensions[^2], CultureInfo.InvariantCulture);
+        var height = double.Parse(dimensions[^1], CultureInfo.InvariantCulture);
+        var full = Path.GetFullPath(Path.Combine(Host.WebRootPath, "Assets", asset.Svg));
+        var primitives = XDocument.Load(full).Descendants()
+            .Where(element => element.Name.LocalName is "path" or "polygon" or "polyline" or "rect" or "circle" or "ellipse" or "line")
+            .ToArray();
+        var paths = primitives.Where(element => element.Name.LocalName == "path").ToArray();
+        var closedPaths = paths.Count(element => System.Text.RegularExpressions.Regex.IsMatch((string?)element.Attribute("d") ?? "", @"[zZ]\s*$"));
+        var curvedPaths = paths.Count(element => System.Text.RegularExpressions.Regex.IsMatch((string?)element.Attribute("d") ?? "", @"[cCsSqQtTaA]"));
+        var primitiveKinds = string.Join(", ", primitives.GroupBy(element => element.Name.LocalName)
+            .OrderBy(group => group.Key, StringComparer.Ordinal)
+            .Select(group => $"{group.Count()} {group.Key}"));
+        var ratio = width / height;
+        var silhouette = ratio > 1.35 ? "wide silhouette" : ratio < 0.8 ? "tall silhouette" : "balanced silhouette";
+        var contour = $"{silhouette}; {closedPaths} closed and {paths.Length - closedPaths} open paths; {curvedPaths} curved paths; {primitiveKinds}";
+        var colorRoles = asset.ColorRoles?.Select(role => new SceneSuggestionColorRole(role.SourceColor, role.Role, role.Behavior)).ToArray();
+        return new(asset.Concept, asset.Name, asset.Role, asset.Size, asset.Tags, width, height, primitives.Length, contour,
+            SceneThemePolicy.VisualRegionsFor(asset.Concept), colorRoles);
+    }
+    private void Rotate(){if(Selected is not null)Selected.Rotation=(Selected.Rotation+15)%360;} private void Duplicate(){if(Selected is not null){var d=new SceneItem{Asset=Selected.Asset,X=Selected.X+30,Y=Selected.Y+30,W=Selected.W,H=Selected.H,Rotation=Selected.Rotation,Emphasis=Selected.Emphasis,Depth=Selected.Depth,NormalizedX=Selected.NormalizedX,NormalizedY=Selected.NormalizedY,Relevance=Selected.Relevance,Importance=Selected.Importance,Complexity=Selected.Complexity,SceneFunction=Selected.SceneFunction,ColorAssignments=new Dictionary<string,string>(Selected.ColorAssignments,StringComparer.Ordinal),Z=Items.Count};Items.Add(d);Selected=d;}} private void Delete(){if(Selected is not null){Remove(Selected);}} private void Remove(SceneItem i){Items.Remove(i);Relationships.RemoveAll(relation=>relation.SourceConceptId==i.Asset.Concept||relation.TargetConceptId==i.Asset.Concept);if(Selected==i)Selected=null;}
+    private void Reset(){Items.Clear();Relationships.Clear();CompositionIntent=new("general_scene","neutral_or_user_defined","balanced_natural_grouping","balanced_spacing");Message="Новая композиция.";} private void ChangeSize(){foreach(var i in Items)i.Asset=Variant(i.Asset);Arrange();} private void ChangePalette()=>SvgCache.Clear();
+    private void ChangeFormat(){(Width,Height)=Format.StartsWith("Горизонтальный")?(1200,630):Format.StartsWith("Вертикальный")?(800,1200):(1000,1000);Arrange();}
+    private string CanvasFormatId()=>Width==Height?"square":Width>Height?"landscape":"portrait";
+    private void ToggleRole(SceneItem item){var role=item.Asset.Role=="main"?"background":"main";var variant=Catalog.FirstOrDefault(a=>a.Concept==item.Asset.Concept&&a.Size==Size&&a.Role==role);if(variant is null)return;item.Asset=variant;item.Z=role=="background"?(Items.Count==0?0:Items.Min(x=>x.Z)-1):(Items.Count==0?0:Items.Max(x=>x.Z)+1);Arrange();}
+    private void Raise(SceneItem i){i.Z=Items.Count==0?0:Items.Max(x=>x.Z)+1;} private void Lower(SceneItem i){i.Z=Items.Count==0?0:Items.Min(x=>x.Z)-1;}
+    private void SetObjectsMode()=>Mode="objects"; private void SetMeaningMode()=>Mode="meaning";
+    private string AssetHref(Asset asset)=>AssetHref(asset,null);
+    private string AssetHref(Asset asset,IReadOnlyDictionary<string,string>? colorAssignments)
+    {
+        var assignmentKey=colorAssignments is null?"":string.Join(";",colorAssignments.OrderBy(pair=>pair.Key,StringComparer.Ordinal).Select(pair=>$"{pair.Key}={pair.Value}"));
+        var key=(asset.Id,ActivePalette,assignmentKey); if(SvgCache.TryGetValue(key,out var cached))return cached;
+        var full=Path.GetFullPath(Path.Combine(Host.WebRootPath,"Assets",asset.Svg));
+        var basePath=Path.GetFullPath(Path.Combine(Host.WebRootPath,"Assets"))+Path.DirectorySeparatorChar;
+        if(!full.StartsWith(basePath,StringComparison.OrdinalIgnoreCase))return "";
+        var text=File.ReadAllText(full);
+        foreach(var pair in AssetPaletteMap(ActivePalette,asset,colorAssignments)) text=System.Text.RegularExpressions.Regex.Replace(text,System.Text.RegularExpressions.Regex.Escape(pair.Key),pair.Value,System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+        return SvgCache[key]="data:image/svg+xml;base64,"+Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(text));
+    }
+    private IReadOnlyDictionary<string,string> AssetPaletteMap(string palette,Asset asset,IReadOnlyDictionary<string,string>? colorAssignments=null)
+    {
+        var sourceRoles=asset.ColorRoles?.Select(role=>new SceneSuggestionColorRole(role.SourceColor,role.Role,role.Behavior));
+        return Palettes?.CreateAssetColorMap(palette,asset.Role,sourceRoles,colorAssignments)
+            ?? SvgSceneExporter.PaletteMap(palette);
+    }
+    private async Task Export(){var items=Items.Where(x=>ShowBackground||x.Asset.Role!="background").OrderBy(i=>i.Z).Select(i=>new SceneSvgItem(Path.Combine(Host.WebRootPath,"Assets",i.Asset.Svg),i.X,i.Y,i.W,i.H,i.Rotation,i.Id,i.Asset.Concept,i.Asset.Role,AssetPaletteMap(ActivePalette,i.Asset,i.ColorAssignments),i.Relevance,i.Importance,i.Complexity));var paletteMap=Palettes?.CreateColorMap(ActivePalette)??SvgSceneExporter.PaletteMap(ActivePalette);var svg=SvgSceneExporter.Export(Width,Height,PaletteBg,paletteMap,items);await JS.InvokeVoidAsync("omegaDownload",Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(svg)),"omega-composition.svg");}
+    private static string F(double value)=>value.ToString("0.###",CultureInfo.InvariantCulture);
+    public async ValueTask DisposeAsync(){if(_sceneEditor is not null){try{await _sceneEditor.InvokeVoidAsync("disableSceneDragging","scene");await _sceneEditor.DisposeAsync();}catch(JSDisconnectedException){}}_selfReference?.Dispose();}
+}

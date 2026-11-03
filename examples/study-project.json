@@ -1,0 +1,66 @@
+{
+  "id": "study-project",
+  "title": "\u0421\u043B\u043E\u0436\u043D\u044B\u0439 \u043F\u0440\u043E\u0435\u043A\u0442 \u0438 \u0438\u0437\u0443\u0447\u0435\u043D\u0438\u0435",
+  "width": 1200,
+  "height": 630,
+  "paletteId": "palette-3",
+  "backgroundColor": "#BEEBEB",
+  "rationale": "\u041A\u043D\u0438\u0433\u0430 \u0432 \u0446\u0435\u043D\u0442\u0440\u0435; \u0440\u0443\u0447\u043A\u0430 \u0438 \u043F\u0430\u0437\u043B \u0432\u0437\u0430\u0438\u043C\u043E\u0434\u0435\u0439\u0441\u0442\u0432\u0443\u044E\u0442 \u0441 \u043D\u0435\u0439, \u043F\u0430\u043F\u043A\u0430 \u0441\u043E\u0431\u0438\u0440\u0430\u0435\u0442 \u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u043A\u043E\u043D\u0442\u0435\u043A\u0441\u0442, \u043B\u0430\u043C\u043F\u0430 \u043E\u0441\u0442\u0430\u0451\u0442\u0441\u044F \u043D\u0430 \u0437\u0430\u0434\u043D\u0435\u043C \u043F\u043B\u0430\u043D\u0435.",
+  "objects": [
+    {
+      "assetId": "lamp-s-background",
+      "x": 180,
+      "y": 165,
+      "width": 150,
+      "height": 180,
+      "rotation": -4,
+      "relevance": 0.44,
+      "importance": 0.38,
+      "complexity": 0.28
+    },
+    {
+      "assetId": "folder-l-background",
+      "x": 900,
+      "y": 405,
+      "width": 270,
+      "height": 143,
+      "rotation": 4,
+      "relevance": 0.48,
+      "importance": 0.5,
+      "complexity": 0.3
+    },
+    {
+      "assetId": "book-l-main",
+      "x": 570,
+      "y": 375,
+      "width": 410,
+      "height": 277,
+      "rotation": -2,
+      "relevance": 0.98,
+      "importance": 1,
+      "complexity": 0.68
+    },
+    {
+      "assetId": "puzzle-s-main",
+      "x": 680,
+      "y": 338,
+      "width": 115,
+      "height": 76,
+      "rotation": -8,
+      "relevance": 0.84,
+      "importance": 0.69,
+      "complexity": 0.5
+    },
+    {
+      "assetId": "pen-l-main",
+      "x": 555,
+      "y": 392,
+      "width": 165,
+      "height": 93,
+      "rotation": 12,
+      "relevance": 0.88,
+      "importance": 0.78,
+      "complexity": 0.43
+    }
+  ]
+}

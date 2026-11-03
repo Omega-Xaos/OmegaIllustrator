@@ -1,0 +1,44 @@
+{
+  "id": "quiet-break",
+  "title": "\u0422\u0438\u0445\u0430\u044F \u043C\u0438\u043D\u0443\u0442\u0430 \u043E\u0442\u0434\u044B\u0445\u0430",
+  "width": 1000,
+  "height": 1000,
+  "paletteId": "palette-1",
+  "backgroundColor": "#D7CDF5",
+  "rationale": "\u041A\u043D\u0438\u0433\u0430 \u0437\u0430\u0434\u0430\u0451\u0442 \u0441\u043F\u043E\u043A\u043E\u0439\u043D\u043E\u0435 \u0447\u0442\u0435\u043D\u0438\u0435; \u043D\u0430\u0443\u0448\u043D\u0438\u043A\u0438 \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u044E\u0442 \u043E\u0442\u0434\u044B\u0445, \u0430 \u043D\u0435\u0431\u043E\u043B\u044C\u0448\u043E\u0439 \u0431\u0443\u043A\u0435\u0442 \u0434\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 \u0436\u0438\u0432\u043E\u0439 \u043F\u0440\u0438\u0440\u043E\u0434\u043D\u044B\u0439 \u0430\u043A\u0446\u0435\u043D\u0442.",
+  "objects": [
+    {
+      "assetId": "flowers-s-background",
+      "x": 285,
+      "y": 435,
+      "width": 135,
+      "height": 171,
+      "rotation": -5,
+      "relevance": 0.67,
+      "importance": 0.42,
+      "complexity": 0.4
+    },
+    {
+      "assetId": "book-l-main",
+      "x": 475,
+      "y": 570,
+      "width": 370,
+      "height": 250,
+      "rotation": 3,
+      "relevance": 0.96,
+      "importance": 0.95,
+      "complexity": 0.56
+    },
+    {
+      "assetId": "headphones-l-main",
+      "x": 710,
+      "y": 510,
+      "width": 225,
+      "height": 175,
+      "rotation": 7,
+      "relevance": 0.82,
+      "importance": 0.7,
+      "complexity": 0.62
+    }
+  ]
+}

@@ -1,0 +1,430 @@
+[
+  {
+    "id": "example-01",
+    "sourceNodeId": "24:2437",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 1000,
+    "height": 1000,
+    "format": "square",
+    "namedElements": [
+      "\u041A\u043D\u0438\u0433\u0430",
+      "\u0422\u0435\u043B\u0435\u0444\u043E\u043D"
+    ],
+    "concepts": [
+      "book",
+      "phone"
+    ],
+    "unresolvedElements": [],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-02",
+    "sourceNodeId": "24:2654",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 1000,
+    "height": 1000,
+    "format": "square",
+    "namedElements": [
+      "\u041B\u0430\u043C\u043F\u0430",
+      "\u041A\u043E\u0448\u0435\u043B\u0435\u043A",
+      "\u041C\u043E\u043D\u0435\u0442\u0430"
+    ],
+    "concepts": [
+      "lamp",
+      "coin"
+    ],
+    "unresolvedElements": [
+      "\u041A\u043E\u0448\u0435\u043B\u0435\u043A"
+    ],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-03",
+    "sourceNodeId": "24:2914",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 1000,
+    "height": 1000,
+    "format": "square",
+    "namedElements": [
+      "\u0420\u0443\u0447\u043A\u0430",
+      "\u041A\u043D\u0438\u0433\u0430",
+      "\u041F\u0430\u0437\u043B\u044B"
+    ],
+    "concepts": [
+      "pen",
+      "book",
+      "puzzle"
+    ],
+    "unresolvedElements": [],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-04",
+    "sourceNodeId": "24:3057",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 1000,
+    "height": 1000,
+    "format": "square",
+    "namedElements": [
+      "\u041F\u0430\u043F\u043A\u0430",
+      "\u041A\u043E\u0448\u0435\u043B\u0435\u043A",
+      "\u041C\u043E\u043D\u0435\u0442\u0430"
+    ],
+    "concepts": [
+      "folder",
+      "coin"
+    ],
+    "unresolvedElements": [
+      "\u041A\u043E\u0448\u0435\u043B\u0435\u043A"
+    ],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-05",
+    "sourceNodeId": "24:3312",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 1000,
+    "height": 1000,
+    "format": "square",
+    "namedElements": [
+      "\u043A\u043E\u043D\u0444\u0435\u0442\u0442\u0438",
+      "\u0422\u0435\u043B\u0435\u0444\u043E\u043D",
+      "\u041F\u0430\u0437\u043B\u044B"
+    ],
+    "concepts": [
+      "phone",
+      "puzzle"
+    ],
+    "unresolvedElements": [
+      "\u043A\u043E\u043D\u0444\u0435\u0442\u0442\u0438"
+    ],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-06",
+    "sourceNodeId": "24:3592",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 1000,
+    "height": 1000,
+    "format": "square",
+    "namedElements": [
+      "\u043A\u043E\u043D\u0444\u0435\u0442\u0442\u0438",
+      "\u041D\u0430\u0443\u0448\u043D\u0438\u043A\u0438",
+      "Group 2136136347"
+    ],
+    "concepts": [
+      "headphones"
+    ],
+    "unresolvedElements": [
+      "\u043A\u043E\u043D\u0444\u0435\u0442\u0442\u0438",
+      "Group 2136136347"
+    ],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-07",
+    "sourceNodeId": "24:7656",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 1200,
+    "height": 630,
+    "format": "landscape",
+    "namedElements": [
+      "\u0422\u0435\u043B\u0435\u0444\u043E\u043D",
+      "\u041F\u0430\u0437\u043B\u044B"
+    ],
+    "concepts": [
+      "phone",
+      "puzzle"
+    ],
+    "unresolvedElements": [],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-08",
+    "sourceNodeId": "24:8002",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 1200,
+    "height": 630,
+    "format": "landscape",
+    "namedElements": [
+      "\u041A\u043D\u0438\u0433\u0430",
+      "\u0422\u0435\u043B\u0435\u0444\u043E\u043D"
+    ],
+    "concepts": [
+      "book",
+      "phone"
+    ],
+    "unresolvedElements": [],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-09",
+    "sourceNodeId": "24:8070",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 1200,
+    "height": 630,
+    "format": "landscape",
+    "namedElements": [
+      "\u041F\u0430\u043F\u043A\u0430",
+      "\u041C\u043E\u043D\u0435\u0442\u0430",
+      "\u041A\u043E\u0448\u0435\u043B\u0435\u043A"
+    ],
+    "concepts": [
+      "folder",
+      "coin"
+    ],
+    "unresolvedElements": [
+      "\u041A\u043E\u0448\u0435\u043B\u0435\u043A"
+    ],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-10",
+    "sourceNodeId": "24:8127",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 1200,
+    "height": 630,
+    "format": "landscape",
+    "namedElements": [
+      "\u041D\u0430\u0443\u0448\u043D\u0438\u043A\u0438",
+      "Group 2136136347"
+    ],
+    "concepts": [
+      "headphones"
+    ],
+    "unresolvedElements": [
+      "Group 2136136347"
+    ],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-11",
+    "sourceNodeId": "24:8191",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 1200,
+    "height": 630,
+    "format": "landscape",
+    "namedElements": [
+      "\u041B\u0430\u043C\u043F\u0430",
+      "\u041C\u043E\u043D\u0435\u0442\u0430",
+      "\u041A\u043E\u0448\u0435\u043B\u0435\u043A"
+    ],
+    "concepts": [
+      "lamp",
+      "coin"
+    ],
+    "unresolvedElements": [
+      "\u041A\u043E\u0448\u0435\u043B\u0435\u043A"
+    ],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-12",
+    "sourceNodeId": "24:8248",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 1200,
+    "height": 630,
+    "format": "landscape",
+    "namedElements": [
+      "\u0420\u0443\u0447\u043A\u0430",
+      "\u041A\u043D\u0438\u0433\u0430",
+      "\u041F\u0430\u0437\u043B\u044B"
+    ],
+    "concepts": [
+      "pen",
+      "book",
+      "puzzle"
+    ],
+    "unresolvedElements": [],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-13",
+    "sourceNodeId": "24:9802",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 800,
+    "height": 1200,
+    "format": "portrait",
+    "namedElements": [
+      "\u0422\u0435\u043B\u0435\u0444\u043E\u043D",
+      "\u041F\u0430\u0437\u043B\u044B"
+    ],
+    "concepts": [
+      "phone",
+      "puzzle"
+    ],
+    "unresolvedElements": [],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-14",
+    "sourceNodeId": "24:9813",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 800,
+    "height": 1200,
+    "format": "portrait",
+    "namedElements": [
+      "\u041A\u043D\u0438\u0433\u0430",
+      "\u0422\u0435\u043B\u0435\u0444\u043E\u043D"
+    ],
+    "concepts": [
+      "book",
+      "phone"
+    ],
+    "unresolvedElements": [],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-15",
+    "sourceNodeId": "24:9829",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 800,
+    "height": 1200,
+    "format": "portrait",
+    "namedElements": [
+      "\u041F\u0430\u043F\u043A\u0430",
+      "\u041C\u043E\u043D\u0435\u0442\u0430",
+      "\u041A\u043E\u0448\u0435\u043B\u0435\u043A"
+    ],
+    "concepts": [
+      "folder",
+      "coin"
+    ],
+    "unresolvedElements": [
+      "\u041A\u043E\u0448\u0435\u043B\u0435\u043A"
+    ],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-16",
+    "sourceNodeId": "24:9833",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 800,
+    "height": 1200,
+    "format": "portrait",
+    "namedElements": [
+      "\u041D\u0430\u0443\u0448\u043D\u0438\u043A\u0438",
+      "Group 2136136347"
+    ],
+    "concepts": [
+      "headphones"
+    ],
+    "unresolvedElements": [
+      "Group 2136136347"
+    ],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-17",
+    "sourceNodeId": "24:9844",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 800,
+    "height": 1200,
+    "format": "portrait",
+    "namedElements": [
+      "\u041B\u0430\u043C\u043F\u0430",
+      "\u041C\u043E\u043D\u0435\u0442\u0430",
+      "\u041A\u043E\u0448\u0435\u043B\u0435\u043A"
+    ],
+    "concepts": [
+      "lamp",
+      "coin"
+    ],
+    "unresolvedElements": [
+      "\u041A\u043E\u0448\u0435\u043B\u0435\u043A"
+    ],
+    "sourceNodeFound": true
+  },
+  {
+    "id": "example-18",
+    "sourceNodeId": "24:9848",
+    "sourceName": "\u0424\u043E\u043D",
+    "sourcePageId": "21:2",
+    "sourcePageName": "\u041F\u0440\u0438\u043C\u0435\u0440\u044B \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0439",
+    "sourceSectionId": "25:11069",
+    "sourceSectionName": "Section 1",
+    "width": 800,
+    "height": 1200,
+    "format": "portrait",
+    "namedElements": [
+      "\u0420\u0443\u0447\u043A\u0430",
+      "\u041A\u043D\u0438\u0433\u0430",
+      "\u041F\u0430\u0437\u043B\u044B"
+    ],
+    "concepts": [
+      "pen",
+      "book",
+      "puzzle"
+    ],
+    "unresolvedElements": [],
+    "sourceNodeFound": true
+  }
+]

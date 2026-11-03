@@ -1,0 +1,89 @@
+.ai-settings-panel {
+    width: min(100%, 920px);
+    align-self: center;
+}
+
+.ai-settings-panel h2 {
+    margin: 4px 0 8px;
+    font-size: 18px;
+}
+
+.ai-settings-panel h3 {
+    margin: 20px 0 8px;
+    font-size: 14px;
+}
+
+.ai-settings-panel > select,
+.api-form input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.api-form input {
+    font: inherit;
+    border: 1px solid #dedbe5;
+    border-radius: 9px;
+    background: white;
+    padding: 9px 12px;
+    color: inherit;
+}
+
+.api-form label {
+    margin-top: 12px;
+}
+
+.field-hint {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #665b7b;
+}
+
+.ai-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.api-profile-list {
+    display: grid;
+    gap: 8px;
+}
+
+.api-profile-row {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+}
+
+.profile-select {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 4px;
+}
+
+.profile-select span,
+.profile-select small {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    color: #665b7b;
+}
+
+.danger {
+    color: #9b2c38;
+}
+
+@media (max-width: 700px) {
+    .api-profile-row {
+        flex-wrap: wrap;
+    }
+
+    .profile-select {
+        flex-basis: 100%;
+    }
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "palette-1",
+    "sourceNodeId": "21:29569",
+    "background": {
+      "bg1": "#D7CDF5",
+      "bg2": "#AA9BF0",
+      "bg3": "#7864D7"
+    },
+    "objectOnly": {
+      "accent1": "#F9ECB0",
+      "accent2": "#F9A3AA",
+      "accent3": "#FFE3E1"
+    },
+    "neutral": {
+      "outline": "#181817",
+      "white": "#FFFFFF"
+    }
+  },
+  {
+    "id": "palette-2",
+    "sourceNodeId": "21:29570",
+    "background": {
+      "bg1": "#FDD7B9",
+      "bg2": "#FAC896",
+      "bg3": "#D27532"
+    },
+    "objectOnly": {
+      "accent1": "#F9ECB0",
+      "accent2": "#80DADA",
+      "accent3": "#BEEBEB"
+    },
+    "neutral": {
+      "outline": "#181817",
+      "white": "#FFFFFF"
+    }
+  },
+  {
+    "id": "palette-3",
+    "sourceNodeId": "21:29579",
+    "background": {
+      "bg1": "#BEEBEB",
+      "bg2": "#80DADA",
+      "bg3": "#5ABEBE"
+    },
+    "objectOnly": {
+      "accent1": "#FFD4F2",
+      "accent2": "#6D7BFC",
+      "accent3": "#B6C6FE"
+    },
+    "neutral": {
+      "outline": "#181817",
+      "white": "#FFFFFF"
+    }
+  }
+]

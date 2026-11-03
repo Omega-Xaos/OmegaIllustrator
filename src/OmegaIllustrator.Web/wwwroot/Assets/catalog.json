@@ -1,0 +1,2098 @@
+[
+  {
+    "id": "book-l-main",
+    "concept": "book",
+    "name": "\u041A\u043D\u0438\u0433\u0430",
+    "role": "main",
+    "size": "L",
+    "sourceNodeId": "21:29965",
+    "sourceFrameName": "\u041A\u043D\u0438\u0433\u0430",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 1445.89 976.66",
+    "tags": [
+      "\u043A\u043D\u0438\u0433\u0430",
+      "\u0443\u0447\u0451\u0431\u0430",
+      "\u0437\u043D\u0430\u043D\u0438\u044F",
+      "\u0447\u0442\u0435\u043D\u0438\u0435",
+      "book",
+      "education"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#181817",
+      "#F9A3AA",
+      "#F9ECB0",
+      "#FFE3E1",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9A3AA",
+        "role": "objectOnly.accent2",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFE3E1",
+        "role": "objectOnly.accent3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/L/book-l-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 53,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "book-l-background",
+    "concept": "book",
+    "name": "\u041A\u043D\u0438\u0433\u0430",
+    "role": "background",
+    "size": "L",
+    "sourceNodeId": "24:6273",
+    "sourceFrameName": "\u041A\u043D\u0438\u0433\u0430",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 1445.89 976.66",
+    "tags": [
+      "\u043A\u043D\u0438\u0433\u0430",
+      "\u0443\u0447\u0451\u0431\u0430",
+      "\u0437\u043D\u0430\u043D\u0438\u044F",
+      "\u0447\u0442\u0435\u043D\u0438\u0435",
+      "book",
+      "education"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#7864D7",
+      "#D7CDF5"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Background/L/book-l-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 53,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "book-s-main",
+    "concept": "book",
+    "name": "\u041A\u043D\u0438\u0433\u0430",
+    "role": "main",
+    "size": "S",
+    "sourceNodeId": "24:3810",
+    "sourceFrameName": "Group 2136136335",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 722.95 488.33",
+    "tags": [
+      "\u043A\u043D\u0438\u0433\u0430",
+      "\u0443\u0447\u0451\u0431\u0430",
+      "\u0437\u043D\u0430\u043D\u0438\u044F",
+      "\u0447\u0442\u0435\u043D\u0438\u0435",
+      "book",
+      "education"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#181817",
+      "#F9A3AA",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9A3AA",
+        "role": "objectOnly.accent2",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/S/book-s-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 51,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "book-s-background",
+    "concept": "book",
+    "name": "\u041A\u043D\u0438\u0433\u0430",
+    "role": "background",
+    "size": "S",
+    "sourceNodeId": "24:6934",
+    "sourceFrameName": "Group 2136136341",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 722.95 488.33",
+    "tags": [
+      "\u043A\u043D\u0438\u0433\u0430",
+      "\u0443\u0447\u0451\u0431\u0430",
+      "\u0437\u043D\u0430\u043D\u0438\u044F",
+      "\u0447\u0442\u0435\u043D\u0438\u0435",
+      "book",
+      "education"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#7864D7",
+      "#D7CDF5"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Background/S/book-s-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 54,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "phone-l-main",
+    "concept": "phone",
+    "name": "\u0422\u0435\u043B\u0435\u0444\u043E\u043D",
+    "role": "main",
+    "size": "L",
+    "sourceNodeId": "21:25472",
+    "sourceFrameName": "\u0422\u0435\u043B\u0435\u0444\u043E\u043D",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 796.53 461.67",
+    "tags": [
+      "\u0442\u0435\u043B\u0435\u0444\u043E\u043D",
+      "\u0441\u0432\u044F\u0437\u044C",
+      "\u043A\u043E\u043C\u043C\u0443\u043D\u0438\u043A\u0430\u0446\u0438\u044F",
+      "phone",
+      "communication"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#181817",
+      "#7864D7",
+      "#D7CDF5",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/L/phone-l-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 155,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "phone-l-background",
+    "concept": "phone",
+    "name": "\u0422\u0435\u043B\u0435\u0444\u043E\u043D",
+    "role": "background",
+    "size": "L",
+    "sourceNodeId": "24:6327",
+    "sourceFrameName": "\u0422\u0435\u043B\u0435\u0444\u043E\u043D",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 796.53 461.67",
+    "tags": [
+      "\u0442\u0435\u043B\u0435\u0444\u043E\u043D",
+      "\u0441\u0432\u044F\u0437\u044C",
+      "\u043A\u043E\u043C\u043C\u0443\u043D\u0438\u043A\u0430\u0446\u0438\u044F",
+      "phone",
+      "communication"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#7864D7",
+      "#D7CDF5"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Background/L/phone-l-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 155,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "phone-s-main",
+    "concept": "phone",
+    "name": "\u0422\u0435\u043B\u0435\u0444\u043E\u043D",
+    "role": "main",
+    "size": "S",
+    "sourceNodeId": "24:4746",
+    "sourceFrameName": "\u0422\u0435\u043B\u0435\u0444\u043E\u043D",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 398.27 230.83",
+    "tags": [
+      "\u0442\u0435\u043B\u0435\u0444\u043E\u043D",
+      "\u0441\u0432\u044F\u0437\u044C",
+      "\u043A\u043E\u043C\u043C\u0443\u043D\u0438\u043A\u0430\u0446\u0438\u044F",
+      "phone",
+      "communication"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#181817",
+      "#7864D7",
+      "#D7CDF5",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/S/phone-s-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 96,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "phone-s-background",
+    "concept": "phone",
+    "name": "\u0422\u0435\u043B\u0435\u0444\u043E\u043D",
+    "role": "background",
+    "size": "S",
+    "sourceNodeId": "24:6990",
+    "sourceFrameName": "\u0422\u0435\u043B\u0435\u0444\u043E\u043D",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 398.27 230.83",
+    "tags": [
+      "\u0442\u0435\u043B\u0435\u0444\u043E\u043D",
+      "\u0441\u0432\u044F\u0437\u044C",
+      "\u043A\u043E\u043C\u043C\u0443\u043D\u0438\u043A\u0430\u0446\u0438\u044F",
+      "phone",
+      "communication"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#7864D7",
+      "#D7CDF5"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Background/S/phone-s-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 155,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "puzzle-l-main",
+    "concept": "puzzle",
+    "name": "\u041F\u0430\u0437\u043B\u044B",
+    "role": "main",
+    "size": "L",
+    "sourceNodeId": "21:417",
+    "sourceFrameName": "\u041F\u0430\u0437\u043B\u044B",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 544.16 313.53",
+    "tags": [
+      "\u043F\u0430\u0437\u043B\u044B",
+      "\u0437\u0430\u0434\u0430\u0447\u0430",
+      "\u0440\u0435\u0448\u0435\u043D\u0438\u0435",
+      "\u043B\u043E\u0433\u0438\u043A\u0430",
+      "puzzle",
+      "problem"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#181817",
+      "#F9A3AA",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9A3AA",
+        "role": "objectOnly.accent2",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/L/puzzle-l-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 57,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "puzzle-l-background",
+    "concept": "puzzle",
+    "name": "\u041F\u0430\u0437\u043B\u044B",
+    "role": "background",
+    "size": "L",
+    "sourceNodeId": "24:6214",
+    "sourceFrameName": "\u041F\u0430\u0437\u043B\u044B",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 544.16 313.53",
+    "tags": [
+      "\u043F\u0430\u0437\u043B\u044B",
+      "\u0437\u0430\u0434\u0430\u0447\u0430",
+      "\u0440\u0435\u0448\u0435\u043D\u0438\u0435",
+      "\u043B\u043E\u0433\u0438\u043A\u0430",
+      "puzzle",
+      "problem"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#7864D7",
+      "#D7CDF5"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Background/L/puzzle-l-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 57,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "puzzle-s-main",
+    "concept": "puzzle",
+    "name": "\u041F\u0430\u0437\u043B\u044B",
+    "role": "main",
+    "size": "S",
+    "sourceNodeId": "24:4903",
+    "sourceFrameName": "\u041F\u0430\u0437\u043B\u044B",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 272.08 156.77",
+    "tags": [
+      "\u043F\u0430\u0437\u043B\u044B",
+      "\u0437\u0430\u0434\u0430\u0447\u0430",
+      "\u0440\u0435\u0448\u0435\u043D\u0438\u0435",
+      "\u043B\u043E\u0433\u0438\u043A\u0430",
+      "puzzle",
+      "problem"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#181817",
+      "#D7CDF5",
+      "#F9A3AA",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9A3AA",
+        "role": "objectOnly.accent2",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/S/puzzle-s-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 57,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "puzzle-s-background",
+    "concept": "puzzle",
+    "name": "\u041F\u0430\u0437\u043B\u044B",
+    "role": "background",
+    "size": "S",
+    "sourceNodeId": "24:7147",
+    "sourceFrameName": "\u041F\u0430\u0437\u043B\u044B",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 272.08 156.77",
+    "tags": [
+      "\u043F\u0430\u0437\u043B\u044B",
+      "\u0437\u0430\u0434\u0430\u0447\u0430",
+      "\u0440\u0435\u0448\u0435\u043D\u0438\u0435",
+      "\u043B\u043E\u0433\u0438\u043A\u0430",
+      "puzzle",
+      "problem"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#7864D7",
+      "#D7CDF5"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Background/S/puzzle-s-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 57,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "coin-l-main",
+    "concept": "coin",
+    "name": "\u041C\u043E\u043D\u0435\u0442\u0430",
+    "role": "main",
+    "size": "L",
+    "sourceNodeId": "24:2207",
+    "sourceFrameName": "\u041C\u043E\u043D\u0435\u0442\u0430",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 286.68 188.5",
+    "tags": [
+      "\u043C\u043E\u043D\u0435\u0442\u0430",
+      "\u0434\u0435\u043D\u044C\u0433\u0438",
+      "\u0444\u0438\u043D\u0430\u043D\u0441\u044B",
+      "coin",
+      "money"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#171409",
+      "#181817",
+      "#D9D9D9",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#171409",
+        "role": null,
+        "behavior": "preserve-source-color"
+      },
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D9D9D9",
+        "role": null,
+        "behavior": "preserve-source-color"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/L/coin-l-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 137,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending; removed detached gray strip extending beyond the SVG viewBox"
+  },
+  {
+    "id": "coin-l-background",
+    "concept": "coin",
+    "name": "\u041C\u043E\u043D\u0435\u0442\u0430",
+    "role": "background",
+    "size": "L",
+    "sourceNodeId": "24:6795",
+    "sourceFrameName": "\u041C\u043E\u043D\u0435\u0442\u0430",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 286.68 188.5",
+    "tags": [
+      "\u043C\u043E\u043D\u0435\u0442\u0430",
+      "\u0434\u0435\u043D\u044C\u0433\u0438",
+      "\u0444\u0438\u043D\u0430\u043D\u0441\u044B",
+      "coin",
+      "money"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#171409",
+      "#7864D7",
+      "#D7CDF5",
+      "#D9D9D9"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#171409",
+        "role": null,
+        "behavior": "preserve-source-color"
+      },
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D9D9D9",
+        "role": null,
+        "behavior": "preserve-source-color"
+      }
+    ],
+    "svg": "Background/L/coin-l-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 137,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending; removed detached gray strip extending beyond the SVG viewBox"
+  },
+  {
+    "id": "coin-s-main",
+    "concept": "coin",
+    "name": "\u041C\u043E\u043D\u0435\u0442\u0430",
+    "role": "main",
+    "size": "S",
+    "sourceNodeId": "24:5345",
+    "sourceFrameName": "\u041C\u043E\u043D\u0435\u0442\u0430",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 152.39 100.2",
+    "tags": [
+      "\u043C\u043E\u043D\u0435\u0442\u0430",
+      "\u0434\u0435\u043D\u044C\u0433\u0438",
+      "\u0444\u0438\u043D\u0430\u043D\u0441\u044B",
+      "coin",
+      "money"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#171409",
+      "#181817",
+      "#D9D9D9",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#171409",
+        "role": null,
+        "behavior": "preserve-source-color"
+      },
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D9D9D9",
+        "role": null,
+        "behavior": "preserve-source-color"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/S/coin-s-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 131,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending; removed detached gray strip extending beyond the SVG viewBox"
+  },
+  {
+    "id": "coin-s-background",
+    "concept": "coin",
+    "name": "\u041C\u043E\u043D\u0435\u0442\u0430",
+    "role": "background",
+    "size": "S",
+    "sourceNodeId": "24:7205",
+    "sourceFrameName": "\u041C\u043E\u043D\u0435\u0442\u0430",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 152.39 100.2",
+    "tags": [
+      "\u043C\u043E\u043D\u0435\u0442\u0430",
+      "\u0434\u0435\u043D\u044C\u0433\u0438",
+      "\u0444\u0438\u043D\u0430\u043D\u0441\u044B",
+      "coin",
+      "money"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#171409",
+      "#7864D7",
+      "#D7CDF5",
+      "#D9D9D9"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#171409",
+        "role": null,
+        "behavior": "preserve-source-color"
+      },
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D9D9D9",
+        "role": null,
+        "behavior": "preserve-source-color"
+      }
+    ],
+    "svg": "Background/S/coin-s-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 137,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending; removed detached gray strip extending beyond the SVG viewBox"
+  },
+  {
+    "id": "headphones-l-main",
+    "concept": "headphones",
+    "name": "\u041D\u0430\u0443\u0448\u043D\u0438\u043A\u0438",
+    "role": "main",
+    "size": "L",
+    "sourceNodeId": "23:122",
+    "sourceFrameName": "\u041D\u0430\u0443\u0448\u043D\u0438\u043A\u0438",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 888.15 691.54",
+    "tags": [
+      "\u043D\u0430\u0443\u0448\u043D\u0438\u043A\u0438",
+      "\u043C\u0443\u0437\u044B\u043A\u0430",
+      "\u0437\u0432\u0443\u043A",
+      "headphones",
+      "music"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#181817",
+      "#D7CDF5",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/L/headphones-l-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 84,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "headphones-l-background",
+    "concept": "headphones",
+    "name": "\u041D\u0430\u0443\u0448\u043D\u0438\u043A\u0438",
+    "role": "background",
+    "size": "L",
+    "sourceNodeId": "24:6484",
+    "sourceFrameName": "\u041D\u0430\u0443\u0448\u043D\u0438\u043A\u0438",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 888.15 691.54",
+    "tags": [
+      "\u043D\u0430\u0443\u0448\u043D\u0438\u043A\u0438",
+      "\u043C\u0443\u0437\u044B\u043A\u0430",
+      "\u0437\u0432\u0443\u043A",
+      "headphones",
+      "music"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#7864D7",
+      "#D7CDF5"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Background/L/headphones-l-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 84,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "headphones-s-main",
+    "concept": "headphones",
+    "name": "\u041D\u0430\u0443\u0448\u043D\u0438\u043A\u0438",
+    "role": "main",
+    "size": "S",
+    "sourceNodeId": "24:5089",
+    "sourceFrameName": "\u041D\u0430\u0443\u0448\u043D\u0438\u043A\u0438",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 444.07 345.77",
+    "tags": [
+      "\u043D\u0430\u0443\u0448\u043D\u0438\u043A\u0438",
+      "\u043C\u0443\u0437\u044B\u043A\u0430",
+      "\u0437\u0432\u0443\u043A",
+      "headphones",
+      "music"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#181817",
+      "#D7CDF5",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/S/headphones-s-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 79,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "headphones-s-background",
+    "concept": "headphones",
+    "name": "\u041D\u0430\u0443\u0448\u043D\u0438\u043A\u0438",
+    "role": "background",
+    "size": "S",
+    "sourceNodeId": "24:7344",
+    "sourceFrameName": "\u041D\u0430\u0443\u0448\u043D\u0438\u043A\u0438",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 444.07 345.77",
+    "tags": [
+      "\u043D\u0430\u0443\u0448\u043D\u0438\u043A\u0438",
+      "\u043C\u0443\u0437\u044B\u043A\u0430",
+      "\u0437\u0432\u0443\u043A",
+      "headphones",
+      "music"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#7864D7",
+      "#D7CDF5"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Background/S/headphones-s-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 84,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "lamp-l-main",
+    "concept": "lamp",
+    "name": "\u041B\u0430\u043C\u043F\u0430",
+    "role": "main",
+    "size": "L",
+    "sourceNodeId": "23:121",
+    "sourceFrameName": "\u041B\u0430\u043C\u043F\u0430",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 945.94 1128.99",
+    "tags": [
+      "\u043B\u0430\u043C\u043F\u0430",
+      "\u0438\u0434\u0435\u044F",
+      "\u0441\u0432\u0435\u0442",
+      "\u0440\u0430\u0431\u043E\u0442\u0430",
+      "lamp",
+      "idea"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#181817",
+      "#D7CDF5",
+      "#F9A3AA",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9A3AA",
+        "role": "objectOnly.accent2",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/L/lamp-l-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 27,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "lamp-l-background",
+    "concept": "lamp",
+    "name": "\u041B\u0430\u043C\u043F\u0430",
+    "role": "background",
+    "size": "L",
+    "sourceNodeId": "24:6569",
+    "sourceFrameName": "\u041B\u0430\u043C\u043F\u0430",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 945.94 1128.99",
+    "tags": [
+      "\u043B\u0430\u043C\u043F\u0430",
+      "\u0438\u0434\u0435\u044F",
+      "\u0441\u0432\u0435\u0442",
+      "\u0440\u0430\u0431\u043E\u0442\u0430",
+      "lamp",
+      "idea"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#7864D7",
+      "#D7CDF5"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Background/L/lamp-l-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 27,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "lamp-s-main",
+    "concept": "lamp",
+    "name": "\u041B\u0430\u043C\u043F\u0430",
+    "role": "main",
+    "size": "S",
+    "sourceNodeId": "24:5485",
+    "sourceFrameName": "\u041B\u0430\u043C\u043F\u0430",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 472.97 564.49",
+    "tags": [
+      "\u043B\u0430\u043C\u043F\u0430",
+      "\u0438\u0434\u0435\u044F",
+      "\u0441\u0432\u0435\u0442",
+      "\u0440\u0430\u0431\u043E\u0442\u0430",
+      "lamp",
+      "idea"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#181817",
+      "#D7CDF5",
+      "#F9A3AA",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9A3AA",
+        "role": "objectOnly.accent2",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/S/lamp-s-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 27,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "lamp-s-background",
+    "concept": "lamp",
+    "name": "\u041B\u0430\u043C\u043F\u0430",
+    "role": "background",
+    "size": "S",
+    "sourceNodeId": "24:7429",
+    "sourceFrameName": "\u041B\u0430\u043C\u043F\u0430",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 472.97 564.49",
+    "tags": [
+      "\u043B\u0430\u043C\u043F\u0430",
+      "\u0438\u0434\u0435\u044F",
+      "\u0441\u0432\u0435\u0442",
+      "\u0440\u0430\u0431\u043E\u0442\u0430",
+      "lamp",
+      "idea"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#7864D7",
+      "#D7CDF5"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Background/S/lamp-s-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 27,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "flowers-l-main",
+    "concept": "flowers",
+    "name": "\u0426\u0432\u0435\u0442\u044B/\u0431\u0443\u043A\u0435\u0442",
+    "role": "main",
+    "size": "L",
+    "sourceNodeId": "28:11628",
+    "sourceFrameName": "Group 2136136344",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 590.57 747.11",
+    "tags": [
+      "\u0446\u0432\u0435\u0442\u044B",
+      "\u0431\u0443\u043A\u0435\u0442",
+      "\u0440\u043E\u0441\u0442",
+      "\u043F\u0440\u0438\u0440\u043E\u0434\u0430",
+      "flowers",
+      "growth"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#171714",
+      "#181817",
+      "#AA9BF0",
+      "#EEE2F6",
+      "#F9A3AA",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#171714",
+        "role": null,
+        "behavior": "preserve-source-color"
+      },
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#AA9BF0",
+        "role": "background.bg2",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#EEE2F6",
+        "role": null,
+        "behavior": "preserve-source-color"
+      },
+      {
+        "sourceColor": "#F9A3AA",
+        "role": "objectOnly.accent2",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/L/flowers-l-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 135,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "flowers-l-background",
+    "concept": "flowers",
+    "name": "\u0426\u0432\u0435\u0442\u044B/\u0431\u0443\u043A\u0435\u0442",
+    "role": "background",
+    "size": "L",
+    "sourceNodeId": "30:11902",
+    "sourceFrameName": "Group 2136136347",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 590.57 747.11",
+    "tags": [
+      "\u0446\u0432\u0435\u0442\u044B",
+      "\u0431\u0443\u043A\u0435\u0442",
+      "\u0440\u043E\u0441\u0442",
+      "\u043F\u0440\u0438\u0440\u043E\u0434\u0430",
+      "flowers",
+      "growth"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#171714",
+      "#7864D7",
+      "#D7CDF5",
+      "#EEE2F6"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#171714",
+        "role": null,
+        "behavior": "preserve-source-color"
+      },
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#EEE2F6",
+        "role": null,
+        "behavior": "preserve-source-color"
+      }
+    ],
+    "svg": "Background/L/flowers-l-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 135,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "flowers-s-main",
+    "concept": "flowers",
+    "name": "\u0426\u0432\u0435\u0442\u044B/\u0431\u0443\u043A\u0435\u0442",
+    "role": "main",
+    "size": "S",
+    "sourceNodeId": "28:11629",
+    "sourceFrameName": "Group 2136136345",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 323.26 408.95",
+    "tags": [
+      "\u0446\u0432\u0435\u0442\u044B",
+      "\u0431\u0443\u043A\u0435\u0442",
+      "\u0440\u043E\u0441\u0442",
+      "\u043F\u0440\u0438\u0440\u043E\u0434\u0430",
+      "flowers",
+      "growth"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#171714",
+      "#181817",
+      "#AA9BF0",
+      "#EEE2F6",
+      "#F9A3AA",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#171714",
+        "role": null,
+        "behavior": "preserve-source-color"
+      },
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#AA9BF0",
+        "role": "background.bg2",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#EEE2F6",
+        "role": null,
+        "behavior": "preserve-source-color"
+      },
+      {
+        "sourceColor": "#F9A3AA",
+        "role": "objectOnly.accent2",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/S/flowers-s-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 135,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "flowers-s-background",
+    "concept": "flowers",
+    "name": "\u0426\u0432\u0435\u0442\u044B/\u0431\u0443\u043A\u0435\u0442",
+    "role": "background",
+    "size": "S",
+    "sourceNodeId": "28:11766",
+    "sourceFrameName": "Group 2136136346",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 323.26 408.95",
+    "tags": [
+      "\u0446\u0432\u0435\u0442\u044B",
+      "\u0431\u0443\u043A\u0435\u0442",
+      "\u0440\u043E\u0441\u0442",
+      "\u043F\u0440\u0438\u0440\u043E\u0434\u0430",
+      "flowers",
+      "growth"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#171714",
+      "#7864D7",
+      "#D7CDF5",
+      "#EEE2F6"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#171714",
+        "role": null,
+        "behavior": "preserve-source-color"
+      },
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#EEE2F6",
+        "role": null,
+        "behavior": "preserve-source-color"
+      }
+    ],
+    "svg": "Background/S/flowers-s-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 135,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "wallet-l-main",
+    "concept": "wallet",
+    "name": "\u041A\u043E\u0448\u0435\u043B\u0451\u043A",
+    "role": "main",
+    "size": "L",
+    "sourceNodeId": "23:211",
+    "sourceFrameName": "\u041A\u043E\u0448\u0435\u043B\u0435\u043A",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 630.42 396.31",
+    "tags": [
+      "\u043A\u043E\u0448\u0435\u043B\u0451\u043A",
+      "\u0444\u0438\u043D\u0430\u043D\u0441\u044B",
+      "\u044D\u043A\u043E\u043D\u043E\u043C\u0438\u044F",
+      "wallet",
+      "savings"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#181817",
+      "#D7CDF5",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/L/wallet-l-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 86,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "wallet-l-background",
+    "concept": "wallet",
+    "name": "\u041A\u043E\u0448\u0435\u043B\u0451\u043A",
+    "role": "background",
+    "size": "L",
+    "sourceNodeId": "24:6660",
+    "sourceFrameName": "\u041A\u043E\u0448\u0435\u043B\u0435\u043A",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 630.42 396.31",
+    "tags": [
+      "\u043A\u043E\u0448\u0435\u043B\u0451\u043A",
+      "\u0444\u0438\u043D\u0430\u043D\u0441\u044B",
+      "\u044D\u043A\u043E\u043D\u043E\u043C\u0438\u044F",
+      "wallet",
+      "savings"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#7864D7",
+      "#D7CDF5"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Background/L/wallet-l-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 86,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "wallet-s-main",
+    "concept": "wallet",
+    "name": "\u041A\u043E\u0448\u0435\u043B\u0451\u043A",
+    "role": "main",
+    "size": "S",
+    "sourceNodeId": "24:4594",
+    "sourceFrameName": "\u041A\u043E\u0448\u0435\u043B\u0435\u043A",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 315.21 198.15",
+    "tags": [
+      "\u043A\u043E\u0448\u0435\u043B\u0451\u043A",
+      "\u0444\u0438\u043D\u0430\u043D\u0441\u044B",
+      "\u044D\u043A\u043E\u043D\u043E\u043C\u0438\u044F",
+      "wallet",
+      "savings"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#181817",
+      "#D7CDF5",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/S/wallet-s-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 83,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "wallet-s-background",
+    "concept": "wallet",
+    "name": "\u041A\u043E\u0448\u0435\u043B\u0451\u043A",
+    "role": "background",
+    "size": "S",
+    "sourceNodeId": "24:7568",
+    "sourceFrameName": "\u041A\u043E\u0448\u0435\u043B\u0435\u043A",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 315.21 198.15",
+    "tags": [
+      "\u043A\u043E\u0448\u0435\u043B\u0451\u043A",
+      "\u0444\u0438\u043D\u0430\u043D\u0441\u044B",
+      "\u044D\u043A\u043E\u043D\u043E\u043C\u0438\u044F",
+      "wallet",
+      "savings"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#7864D7",
+      "#D7CDF5"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Background/S/wallet-s-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 86,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "folder-l-main",
+    "concept": "folder",
+    "name": "\u041F\u0430\u043F\u043A\u0430",
+    "role": "main",
+    "size": "L",
+    "sourceNodeId": "24:1899",
+    "sourceFrameName": "\u041F\u0430\u043F\u043A\u0430",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 1240.62 658.59",
+    "tags": [
+      "\u043F\u0430\u043F\u043A\u0430",
+      "\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B",
+      "\u0440\u0430\u0431\u043E\u0442\u0430",
+      "folder",
+      "documents"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#181817",
+      "#F9A3AA",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9A3AA",
+        "role": "objectOnly.accent2",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/L/folder-l-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 22,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "folder-l-background",
+    "concept": "folder",
+    "name": "\u041F\u0430\u043F\u043A\u0430",
+    "role": "background",
+    "size": "L",
+    "sourceNodeId": "24:6772",
+    "sourceFrameName": "\u041F\u0430\u043F\u043A\u0430",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 1240.62 658.59",
+    "tags": [
+      "\u043F\u0430\u043F\u043A\u0430",
+      "\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B",
+      "\u0440\u0430\u0431\u043E\u0442\u0430",
+      "folder",
+      "documents"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#7864D7",
+      "#D7CDF5"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Background/L/folder-l-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 22,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "folder-s-main",
+    "concept": "folder",
+    "name": "\u041F\u0430\u043F\u043A\u0430",
+    "role": "main",
+    "size": "S",
+    "sourceNodeId": "24:4430",
+    "sourceFrameName": "Group 2136136337",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 620.31 329.29",
+    "tags": [
+      "\u043F\u0430\u043F\u043A\u0430",
+      "\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B",
+      "\u0440\u0430\u0431\u043E\u0442\u0430",
+      "folder",
+      "documents"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#181817",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/S/folder-s-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 20,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "folder-s-background",
+    "concept": "folder",
+    "name": "\u041F\u0430\u043F\u043A\u0430",
+    "role": "background",
+    "size": "S",
+    "sourceNodeId": "24:7520",
+    "sourceFrameName": "Group 2136136342",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 620.31 329.29",
+    "tags": [
+      "\u043F\u0430\u043F\u043A\u0430",
+      "\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B",
+      "\u0440\u0430\u0431\u043E\u0442\u0430",
+      "folder",
+      "documents"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#7864D7",
+      "#D7CDF5"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Background/S/folder-s-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 22,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "pen-l-main",
+    "concept": "pen",
+    "name": "\u0420\u0443\u0447\u043A\u0430",
+    "role": "main",
+    "size": "L",
+    "sourceNodeId": "24:1734",
+    "sourceFrameName": "\u0420\u0443\u0447\u043A\u0430",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 508.43 285.4",
+    "tags": [
+      "\u0440\u0443\u0447\u043A\u0430",
+      "\u0437\u0430\u043F\u0438\u0441\u0438",
+      "\u0442\u0432\u043E\u0440\u0447\u0435\u0441\u0442\u0432\u043E",
+      "pen",
+      "writing"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#181817",
+      "#D7CDF5",
+      "#F9A3AA",
+      "#F9ECB0",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9A3AA",
+        "role": "objectOnly.accent2",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9ECB0",
+        "role": "objectOnly.accent1",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/L/pen-l-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 24,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "pen-l-background",
+    "concept": "pen",
+    "name": "\u0420\u0443\u0447\u043A\u0430",
+    "role": "background",
+    "size": "L",
+    "sourceNodeId": "24:6747",
+    "sourceFrameName": "\u0420\u0443\u0447\u043A\u0430",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 508.43 285.4",
+    "tags": [
+      "\u0440\u0443\u0447\u043A\u0430",
+      "\u0437\u0430\u043F\u0438\u0441\u0438",
+      "\u0442\u0432\u043E\u0440\u0447\u0435\u0441\u0442\u0432\u043E",
+      "pen",
+      "writing"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#7864D7",
+      "#D7CDF5"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Background/L/pen-l-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 24,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "pen-s-main",
+    "concept": "pen",
+    "name": "\u0420\u0443\u0447\u043A\u0430",
+    "role": "main",
+    "size": "S",
+    "sourceNodeId": "24:4287",
+    "sourceFrameName": "Group 2136136336",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 254.21 142.7",
+    "tags": [
+      "\u0440\u0443\u0447\u043A\u0430",
+      "\u0437\u0430\u043F\u0438\u0441\u0438",
+      "\u0442\u0432\u043E\u0440\u0447\u0435\u0441\u0442\u0432\u043E",
+      "pen",
+      "writing"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#181817",
+      "#F9A3AA",
+      "#FFFFFF"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#181817",
+        "role": "neutral.outline",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#F9A3AA",
+        "role": "objectOnly.accent2",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#FFFFFF",
+        "role": "neutral.white",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Main/S/pen-s-main.svg",
+    "status": "Extracted",
+    "vectorPaths": 24,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  },
+  {
+    "id": "pen-s-background",
+    "concept": "pen",
+    "name": "\u0420\u0443\u0447\u043A\u0430",
+    "role": "background",
+    "size": "S",
+    "sourceNodeId": "24:7543",
+    "sourceFrameName": "Group 2136136343",
+    "source": "\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 | \u0438\u043B\u043B\u044E\u0441\u0442\u0440\u0430\u0446\u0438\u0438.fig",
+    "viewBox": "0 0 254.21 142.7",
+    "tags": [
+      "\u0440\u0443\u0447\u043A\u0430",
+      "\u0437\u0430\u043F\u0438\u0441\u0438",
+      "\u0442\u0432\u043E\u0440\u0447\u0435\u0441\u0442\u0432\u043E",
+      "pen",
+      "writing"
+    ],
+    "availablePalettes": [
+      "palette-1",
+      "palette-2",
+      "palette-3"
+    ],
+    "sourceColors": [
+      "#7864D7",
+      "#D7CDF5"
+    ],
+    "colorRoles": [
+      {
+        "sourceColor": "#7864D7",
+        "role": "background.bg3",
+        "behavior": "palette-role"
+      },
+      {
+        "sourceColor": "#D7CDF5",
+        "role": "background.bg1",
+        "behavior": "palette-role"
+      }
+    ],
+    "svg": "Background/S/pen-s-background.svg",
+    "status": "Extracted",
+    "vectorPaths": 24,
+    "reason": "Vector geometry and supported paints exported; visual comparison with the source remains pending"
+  }
+]

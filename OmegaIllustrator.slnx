@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/OmegaIllustrator.Core/OmegaIllustrator.Core.csproj" />
+    <Project Path="src/OmegaIllustrator.Web/OmegaIllustrator.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/OmegaIllustrator.Tests/OmegaIllustrator.Tests.csproj" />
+  </Folder>
+</Solution>

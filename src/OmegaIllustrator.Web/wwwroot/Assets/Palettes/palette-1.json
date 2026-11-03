@@ -1,0 +1,18 @@
+{
+  "id": "palette-1",
+  "sourceNodeId": "21:29569",
+  "background": {
+    "bg1": "#D7CDF5",
+    "bg2": "#AA9BF0",
+    "bg3": "#7864D7"
+  },
+  "objectOnly": {
+    "accent1": "#F9ECB0",
+    "accent2": "#F9A3AA",
+    "accent3": "#FFE3E1"
+  },
+  "neutral": {
+    "outline": "#181817",
+    "white": "#FFFFFF"
+  }
+}

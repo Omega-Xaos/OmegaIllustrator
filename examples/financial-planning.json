@@ -1,0 +1,66 @@
+{
+  "id": "financial-planning",
+  "title": "\u0421\u0435\u0440\u044C\u0451\u0437\u043D\u0430\u044F \u0444\u0438\u043D\u0430\u043D\u0441\u043E\u0432\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430",
+  "width": 1200,
+  "height": 630,
+  "paletteId": "palette-3",
+  "backgroundColor": "#BEEBEB",
+  "rationale": "\u041F\u0430\u043F\u043A\u0430 \u2014 \u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0446\u0435\u043D\u0442\u0440; \u0440\u0443\u0447\u043A\u0430 \u043B\u0435\u0436\u0438\u0442 \u043D\u0430 \u043D\u0435\u0439, \u043A\u043E\u0448\u0435\u043B\u0451\u043A \u0438 \u043C\u043E\u043D\u0435\u0442\u0430 \u043E\u0431\u043E\u0437\u043D\u0430\u0447\u0430\u044E\u0442 \u0444\u0438\u043D\u0430\u043D\u0441\u043E\u0432\u0443\u044E \u0442\u0435\u043C\u0443, \u043B\u0430\u043C\u043F\u0430 \u043E\u0441\u0432\u0435\u0449\u0430\u0435\u0442 \u0440\u0430\u0431\u043E\u0447\u0443\u044E \u0437\u043E\u043D\u0443 \u0441\u0437\u0430\u0434\u0438.",
+  "objects": [
+    {
+      "assetId": "lamp-s-background",
+      "x": 190,
+      "y": 155,
+      "width": 135,
+      "height": 162,
+      "rotation": -3,
+      "relevance": 0.56,
+      "importance": 0.38,
+      "complexity": 0.32
+    },
+    {
+      "assetId": "wallet-l-background",
+      "x": 350,
+      "y": 425,
+      "width": 205,
+      "height": 129,
+      "rotation": -5,
+      "relevance": 0.72,
+      "importance": 0.45,
+      "complexity": 0.48
+    },
+    {
+      "assetId": "folder-l-main",
+      "x": 620,
+      "y": 365,
+      "width": 390,
+      "height": 207,
+      "rotation": 2,
+      "relevance": 0.98,
+      "importance": 1,
+      "complexity": 0.52
+    },
+    {
+      "assetId": "coin-s-main",
+      "x": 875,
+      "y": 420,
+      "width": 76,
+      "height": 50,
+      "rotation": -6,
+      "relevance": 0.78,
+      "importance": 0.55,
+      "complexity": 0.38
+    },
+    {
+      "assetId": "pen-l-main",
+      "x": 610,
+      "y": 350,
+      "width": 152,
+      "height": 85,
+      "rotation": 11,
+      "relevance": 0.86,
+      "importance": 0.73,
+      "complexity": 0.42
+    }
+  ]
+}

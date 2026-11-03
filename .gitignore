@@ -1,0 +1,33 @@
+# .NET build outputs
+**/bin/
+**/obj/
+**/bin-*/
+**/obj-*/
+**/bin-*/**
+**/obj-*/**
+**/TestResults/**
+
+# IDE and local tooling
+.vs/
+.idea/
+*.user
+*.suo
+
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+secrets/
+
+# Generated extraction previews and delivery packages
+/Assets/
+/tools/FigmaAssetExtractor/output/
+/dist/
+/release/
+
+# Employer source file is not needed to build or run; extracted production SVGs are tracked.
+*.fig
+
+# Old/local transfer material and editor-generated planning notes.
+/OmegaIllustrator_Codex_Starter_Pack.zip
+/docs/superpowers/

@@ -1,0 +1,1103 @@
+{
+  "source": "Тестовое | иллюстрации.fig",
+  "sourceFormat": "fig-kiwi v106 ZIP",
+  "extractedNodeCounts": {
+    "totalNodes": 9740,
+    "vectorNodes": 9279,
+    "blobs": 4510
+  },
+  "notes": [
+    "Frame names are as stored in Figma; some generic Group names need manual semantic verification.",
+    "These metadata are not SVG files: export the original vector groups from Figma for production assets.",
+    "Role order of first/second variants inferred from positions under Main/Background headers and screenshots."
+  ],
+  "assets": [
+    {
+      "id": "book-l-main",
+      "concept": "book",
+      "label": "Книга",
+      "size": "L",
+      "role": "main",
+      "figmaNodeId": "21:29965",
+      "sourceFrameName": "Книга",
+      "sourceDimensions": {
+        "width": 1445.89,
+        "height": 976.66
+      },
+      "suggestedSvgPath": "assets/L/main/book.svg",
+      "tags": [
+        "книга",
+        "учёба",
+        "знания",
+        "чтение",
+        "book",
+        "education"
+      ]
+    },
+    {
+      "id": "book-l-background",
+      "concept": "book",
+      "label": "Книга",
+      "size": "L",
+      "role": "background",
+      "figmaNodeId": "24:6273",
+      "sourceFrameName": "Книга",
+      "sourceDimensions": {
+        "width": 1445.89,
+        "height": 976.66
+      },
+      "suggestedSvgPath": "assets/L/background/book.svg",
+      "tags": [
+        "книга",
+        "учёба",
+        "знания",
+        "чтение",
+        "book",
+        "education"
+      ]
+    },
+    {
+      "id": "book-s-main",
+      "concept": "book",
+      "label": "Книга",
+      "size": "S",
+      "role": "main",
+      "figmaNodeId": "24:3810",
+      "sourceFrameName": "Group 2136136335",
+      "sourceDimensions": {
+        "width": 722.95,
+        "height": 488.33
+      },
+      "suggestedSvgPath": "assets/S/main/book.svg",
+      "tags": [
+        "книга",
+        "учёба",
+        "знания",
+        "чтение",
+        "book",
+        "education"
+      ]
+    },
+    {
+      "id": "book-s-background",
+      "concept": "book",
+      "label": "Книга",
+      "size": "S",
+      "role": "background",
+      "figmaNodeId": "24:6934",
+      "sourceFrameName": "Group 2136136341",
+      "sourceDimensions": {
+        "width": 722.95,
+        "height": 488.33
+      },
+      "suggestedSvgPath": "assets/S/background/book.svg",
+      "tags": [
+        "книга",
+        "учёба",
+        "знания",
+        "чтение",
+        "book",
+        "education"
+      ]
+    },
+    {
+      "id": "phone-l-main",
+      "concept": "phone",
+      "label": "Телефон",
+      "size": "L",
+      "role": "main",
+      "figmaNodeId": "21:25472",
+      "sourceFrameName": "Телефон",
+      "sourceDimensions": {
+        "width": 796.53,
+        "height": 461.67
+      },
+      "suggestedSvgPath": "assets/L/main/phone.svg",
+      "tags": [
+        "телефон",
+        "связь",
+        "коммуникация",
+        "phone",
+        "communication"
+      ]
+    },
+    {
+      "id": "phone-l-background",
+      "concept": "phone",
+      "label": "Телефон",
+      "size": "L",
+      "role": "background",
+      "figmaNodeId": "24:6327",
+      "sourceFrameName": "Телефон",
+      "sourceDimensions": {
+        "width": 796.53,
+        "height": 461.67
+      },
+      "suggestedSvgPath": "assets/L/background/phone.svg",
+      "tags": [
+        "телефон",
+        "связь",
+        "коммуникация",
+        "phone",
+        "communication"
+      ]
+    },
+    {
+      "id": "phone-s-main",
+      "concept": "phone",
+      "label": "Телефон",
+      "size": "S",
+      "role": "main",
+      "figmaNodeId": "24:4746",
+      "sourceFrameName": "Телефон",
+      "sourceDimensions": {
+        "width": 398.27,
+        "height": 230.83
+      },
+      "suggestedSvgPath": "assets/S/main/phone.svg",
+      "tags": [
+        "телефон",
+        "связь",
+        "коммуникация",
+        "phone",
+        "communication"
+      ]
+    },
+    {
+      "id": "phone-s-background",
+      "concept": "phone",
+      "label": "Телефон",
+      "size": "S",
+      "role": "background",
+      "figmaNodeId": "24:6990",
+      "sourceFrameName": "Телефон",
+      "sourceDimensions": {
+        "width": 398.27,
+        "height": 230.83
+      },
+      "suggestedSvgPath": "assets/S/background/phone.svg",
+      "tags": [
+        "телефон",
+        "связь",
+        "коммуникация",
+        "phone",
+        "communication"
+      ]
+    },
+    {
+      "id": "puzzle-l-main",
+      "concept": "puzzle",
+      "label": "Пазлы",
+      "size": "L",
+      "role": "main",
+      "figmaNodeId": "21:417",
+      "sourceFrameName": "Пазлы",
+      "sourceDimensions": {
+        "width": 544.16,
+        "height": 313.53
+      },
+      "suggestedSvgPath": "assets/L/main/puzzle.svg",
+      "tags": [
+        "пазлы",
+        "задача",
+        "решение",
+        "логика",
+        "puzzle",
+        "problem"
+      ]
+    },
+    {
+      "id": "puzzle-l-background",
+      "concept": "puzzle",
+      "label": "Пазлы",
+      "size": "L",
+      "role": "background",
+      "figmaNodeId": "24:6214",
+      "sourceFrameName": "Пазлы",
+      "sourceDimensions": {
+        "width": 544.16,
+        "height": 313.53
+      },
+      "suggestedSvgPath": "assets/L/background/puzzle.svg",
+      "tags": [
+        "пазлы",
+        "задача",
+        "решение",
+        "логика",
+        "puzzle",
+        "problem"
+      ]
+    },
+    {
+      "id": "puzzle-s-main",
+      "concept": "puzzle",
+      "label": "Пазлы",
+      "size": "S",
+      "role": "main",
+      "figmaNodeId": "24:4903",
+      "sourceFrameName": "Пазлы",
+      "sourceDimensions": {
+        "width": 272.08,
+        "height": 156.77
+      },
+      "suggestedSvgPath": "assets/S/main/puzzle.svg",
+      "tags": [
+        "пазлы",
+        "задача",
+        "решение",
+        "логика",
+        "puzzle",
+        "problem"
+      ]
+    },
+    {
+      "id": "puzzle-s-background",
+      "concept": "puzzle",
+      "label": "Пазлы",
+      "size": "S",
+      "role": "background",
+      "figmaNodeId": "24:7147",
+      "sourceFrameName": "Пазлы",
+      "sourceDimensions": {
+        "width": 272.08,
+        "height": 156.77
+      },
+      "suggestedSvgPath": "assets/S/background/puzzle.svg",
+      "tags": [
+        "пазлы",
+        "задача",
+        "решение",
+        "логика",
+        "puzzle",
+        "problem"
+      ]
+    },
+    {
+      "id": "coin-l-main",
+      "concept": "coin",
+      "label": "Монета",
+      "size": "L",
+      "role": "main",
+      "figmaNodeId": "24:2207",
+      "sourceFrameName": "Монета",
+      "sourceDimensions": {
+        "width": 286.68,
+        "height": 188.5
+      },
+      "suggestedSvgPath": "assets/L/main/coin.svg",
+      "tags": [
+        "монета",
+        "деньги",
+        "финансы",
+        "coin",
+        "money"
+      ]
+    },
+    {
+      "id": "coin-l-background",
+      "concept": "coin",
+      "label": "Монета",
+      "size": "L",
+      "role": "background",
+      "figmaNodeId": "24:6795",
+      "sourceFrameName": "Монета",
+      "sourceDimensions": {
+        "width": 286.68,
+        "height": 188.5
+      },
+      "suggestedSvgPath": "assets/L/background/coin.svg",
+      "tags": [
+        "монета",
+        "деньги",
+        "финансы",
+        "coin",
+        "money"
+      ]
+    },
+    {
+      "id": "coin-s-main",
+      "concept": "coin",
+      "label": "Монета",
+      "size": "S",
+      "role": "main",
+      "figmaNodeId": "24:5345",
+      "sourceFrameName": "Монета",
+      "sourceDimensions": {
+        "width": 152.39,
+        "height": 100.2
+      },
+      "suggestedSvgPath": "assets/S/main/coin.svg",
+      "tags": [
+        "монета",
+        "деньги",
+        "финансы",
+        "coin",
+        "money"
+      ]
+    },
+    {
+      "id": "coin-s-background",
+      "concept": "coin",
+      "label": "Монета",
+      "size": "S",
+      "role": "background",
+      "figmaNodeId": "24:7205",
+      "sourceFrameName": "Монета",
+      "sourceDimensions": {
+        "width": 152.39,
+        "height": 100.2
+      },
+      "suggestedSvgPath": "assets/S/background/coin.svg",
+      "tags": [
+        "монета",
+        "деньги",
+        "финансы",
+        "coin",
+        "money"
+      ]
+    },
+    {
+      "id": "headphones-l-main",
+      "concept": "headphones",
+      "label": "Наушники",
+      "size": "L",
+      "role": "main",
+      "figmaNodeId": "23:122",
+      "sourceFrameName": "Наушники",
+      "sourceDimensions": {
+        "width": 888.15,
+        "height": 691.54
+      },
+      "suggestedSvgPath": "assets/L/main/headphones.svg",
+      "tags": [
+        "наушники",
+        "музыка",
+        "звук",
+        "headphones",
+        "music"
+      ]
+    },
+    {
+      "id": "headphones-l-background",
+      "concept": "headphones",
+      "label": "Наушники",
+      "size": "L",
+      "role": "background",
+      "figmaNodeId": "24:6484",
+      "sourceFrameName": "Наушники",
+      "sourceDimensions": {
+        "width": 888.15,
+        "height": 691.54
+      },
+      "suggestedSvgPath": "assets/L/background/headphones.svg",
+      "tags": [
+        "наушники",
+        "музыка",
+        "звук",
+        "headphones",
+        "music"
+      ]
+    },
+    {
+      "id": "headphones-s-main",
+      "concept": "headphones",
+      "label": "Наушники",
+      "size": "S",
+      "role": "main",
+      "figmaNodeId": "24:5089",
+      "sourceFrameName": "Наушники",
+      "sourceDimensions": {
+        "width": 444.07,
+        "height": 345.77
+      },
+      "suggestedSvgPath": "assets/S/main/headphones.svg",
+      "tags": [
+        "наушники",
+        "музыка",
+        "звук",
+        "headphones",
+        "music"
+      ]
+    },
+    {
+      "id": "headphones-s-background",
+      "concept": "headphones",
+      "label": "Наушники",
+      "size": "S",
+      "role": "background",
+      "figmaNodeId": "24:7344",
+      "sourceFrameName": "Наушники",
+      "sourceDimensions": {
+        "width": 444.07,
+        "height": 345.77
+      },
+      "suggestedSvgPath": "assets/S/background/headphones.svg",
+      "tags": [
+        "наушники",
+        "музыка",
+        "звук",
+        "headphones",
+        "music"
+      ]
+    },
+    {
+      "id": "lamp-l-main",
+      "concept": "lamp",
+      "label": "Лампа",
+      "size": "L",
+      "role": "main",
+      "figmaNodeId": "23:121",
+      "sourceFrameName": "Лампа",
+      "sourceDimensions": {
+        "width": 945.94,
+        "height": 1128.99
+      },
+      "suggestedSvgPath": "assets/L/main/lamp.svg",
+      "tags": [
+        "лампа",
+        "идея",
+        "свет",
+        "работа",
+        "lamp",
+        "idea"
+      ]
+    },
+    {
+      "id": "lamp-l-background",
+      "concept": "lamp",
+      "label": "Лампа",
+      "size": "L",
+      "role": "background",
+      "figmaNodeId": "24:6569",
+      "sourceFrameName": "Лампа",
+      "sourceDimensions": {
+        "width": 945.94,
+        "height": 1128.99
+      },
+      "suggestedSvgPath": "assets/L/background/lamp.svg",
+      "tags": [
+        "лампа",
+        "идея",
+        "свет",
+        "работа",
+        "lamp",
+        "idea"
+      ]
+    },
+    {
+      "id": "lamp-s-main",
+      "concept": "lamp",
+      "label": "Лампа",
+      "size": "S",
+      "role": "main",
+      "figmaNodeId": "24:5485",
+      "sourceFrameName": "Лампа",
+      "sourceDimensions": {
+        "width": 472.97,
+        "height": 564.49
+      },
+      "suggestedSvgPath": "assets/S/main/lamp.svg",
+      "tags": [
+        "лампа",
+        "идея",
+        "свет",
+        "работа",
+        "lamp",
+        "idea"
+      ]
+    },
+    {
+      "id": "lamp-s-background",
+      "concept": "lamp",
+      "label": "Лампа",
+      "size": "S",
+      "role": "background",
+      "figmaNodeId": "24:7429",
+      "sourceFrameName": "Лампа",
+      "sourceDimensions": {
+        "width": 472.97,
+        "height": 564.49
+      },
+      "suggestedSvgPath": "assets/S/background/lamp.svg",
+      "tags": [
+        "лампа",
+        "идея",
+        "свет",
+        "работа",
+        "lamp",
+        "idea"
+      ]
+    },
+    {
+      "id": "flowers-l-main",
+      "concept": "flowers",
+      "label": "Цветы/букет",
+      "size": "L",
+      "role": "main",
+      "figmaNodeId": "28:11628",
+      "sourceFrameName": "Group 2136136344",
+      "sourceDimensions": {
+        "width": 590.57,
+        "height": 747.11
+      },
+      "suggestedSvgPath": "assets/L/main/flowers.svg",
+      "tags": [
+        "цветы",
+        "букет",
+        "рост",
+        "природа",
+        "flowers",
+        "growth"
+      ]
+    },
+    {
+      "id": "flowers-l-background",
+      "concept": "flowers",
+      "label": "Цветы/букет",
+      "size": "L",
+      "role": "background",
+      "figmaNodeId": "30:11902",
+      "sourceFrameName": "Group 2136136347",
+      "sourceDimensions": {
+        "width": 590.57,
+        "height": 747.11
+      },
+      "suggestedSvgPath": "assets/L/background/flowers.svg",
+      "tags": [
+        "цветы",
+        "букет",
+        "рост",
+        "природа",
+        "flowers",
+        "growth"
+      ]
+    },
+    {
+      "id": "flowers-s-main",
+      "concept": "flowers",
+      "label": "Цветы/букет",
+      "size": "S",
+      "role": "main",
+      "figmaNodeId": "28:11629",
+      "sourceFrameName": "Group 2136136345",
+      "sourceDimensions": {
+        "width": 323.26,
+        "height": 408.95
+      },
+      "suggestedSvgPath": "assets/S/main/flowers.svg",
+      "tags": [
+        "цветы",
+        "букет",
+        "рост",
+        "природа",
+        "flowers",
+        "growth"
+      ]
+    },
+    {
+      "id": "flowers-s-background",
+      "concept": "flowers",
+      "label": "Цветы/букет",
+      "size": "S",
+      "role": "background",
+      "figmaNodeId": "28:11766",
+      "sourceFrameName": "Group 2136136346",
+      "sourceDimensions": {
+        "width": 323.26,
+        "height": 408.95
+      },
+      "suggestedSvgPath": "assets/S/background/flowers.svg",
+      "tags": [
+        "цветы",
+        "букет",
+        "рост",
+        "природа",
+        "flowers",
+        "growth"
+      ]
+    },
+    {
+      "id": "wallet-l-main",
+      "concept": "wallet",
+      "label": "Кошелёк",
+      "size": "L",
+      "role": "main",
+      "figmaNodeId": "23:211",
+      "sourceFrameName": "Кошелек",
+      "sourceDimensions": {
+        "width": 630.42,
+        "height": 396.31
+      },
+      "suggestedSvgPath": "assets/L/main/wallet.svg",
+      "tags": [
+        "кошелёк",
+        "финансы",
+        "экономия",
+        "wallet",
+        "savings"
+      ]
+    },
+    {
+      "id": "wallet-l-background",
+      "concept": "wallet",
+      "label": "Кошелёк",
+      "size": "L",
+      "role": "background",
+      "figmaNodeId": "24:6660",
+      "sourceFrameName": "Кошелек",
+      "sourceDimensions": {
+        "width": 630.42,
+        "height": 396.31
+      },
+      "suggestedSvgPath": "assets/L/background/wallet.svg",
+      "tags": [
+        "кошелёк",
+        "финансы",
+        "экономия",
+        "wallet",
+        "savings"
+      ]
+    },
+    {
+      "id": "wallet-s-main",
+      "concept": "wallet",
+      "label": "Кошелёк",
+      "size": "S",
+      "role": "main",
+      "figmaNodeId": "24:4594",
+      "sourceFrameName": "Кошелек",
+      "sourceDimensions": {
+        "width": 315.21,
+        "height": 198.15
+      },
+      "suggestedSvgPath": "assets/S/main/wallet.svg",
+      "tags": [
+        "кошелёк",
+        "финансы",
+        "экономия",
+        "wallet",
+        "savings"
+      ]
+    },
+    {
+      "id": "wallet-s-background",
+      "concept": "wallet",
+      "label": "Кошелёк",
+      "size": "S",
+      "role": "background",
+      "figmaNodeId": "24:7568",
+      "sourceFrameName": "Кошелек",
+      "sourceDimensions": {
+        "width": 315.21,
+        "height": 198.15
+      },
+      "suggestedSvgPath": "assets/S/background/wallet.svg",
+      "tags": [
+        "кошелёк",
+        "финансы",
+        "экономия",
+        "wallet",
+        "savings"
+      ]
+    },
+    {
+      "id": "folder-l-main",
+      "concept": "folder",
+      "label": "Папка",
+      "size": "L",
+      "role": "main",
+      "figmaNodeId": "24:1899",
+      "sourceFrameName": "Папка",
+      "sourceDimensions": {
+        "width": 1240.62,
+        "height": 658.59
+      },
+      "suggestedSvgPath": "assets/L/main/folder.svg",
+      "tags": [
+        "папка",
+        "документы",
+        "работа",
+        "folder",
+        "documents"
+      ]
+    },
+    {
+      "id": "folder-l-background",
+      "concept": "folder",
+      "label": "Папка",
+      "size": "L",
+      "role": "background",
+      "figmaNodeId": "24:6772",
+      "sourceFrameName": "Папка",
+      "sourceDimensions": {
+        "width": 1240.62,
+        "height": 658.59
+      },
+      "suggestedSvgPath": "assets/L/background/folder.svg",
+      "tags": [
+        "папка",
+        "документы",
+        "работа",
+        "folder",
+        "documents"
+      ]
+    },
+    {
+      "id": "folder-s-main",
+      "concept": "folder",
+      "label": "Папка",
+      "size": "S",
+      "role": "main",
+      "figmaNodeId": "24:4430",
+      "sourceFrameName": "Group 2136136337",
+      "sourceDimensions": {
+        "width": 620.31,
+        "height": 329.29
+      },
+      "suggestedSvgPath": "assets/S/main/folder.svg",
+      "tags": [
+        "папка",
+        "документы",
+        "работа",
+        "folder",
+        "documents"
+      ]
+    },
+    {
+      "id": "folder-s-background",
+      "concept": "folder",
+      "label": "Папка",
+      "size": "S",
+      "role": "background",
+      "figmaNodeId": "24:7520",
+      "sourceFrameName": "Group 2136136342",
+      "sourceDimensions": {
+        "width": 620.31,
+        "height": 329.29
+      },
+      "suggestedSvgPath": "assets/S/background/folder.svg",
+      "tags": [
+        "папка",
+        "документы",
+        "работа",
+        "folder",
+        "documents"
+      ]
+    },
+    {
+      "id": "pen-l-main",
+      "concept": "pen",
+      "label": "Ручка",
+      "size": "L",
+      "role": "main",
+      "figmaNodeId": "24:1734",
+      "sourceFrameName": "Ручка",
+      "sourceDimensions": {
+        "width": 508.43,
+        "height": 285.4
+      },
+      "suggestedSvgPath": "assets/L/main/pen.svg",
+      "tags": [
+        "ручка",
+        "записи",
+        "творчество",
+        "pen",
+        "writing"
+      ]
+    },
+    {
+      "id": "pen-l-background",
+      "concept": "pen",
+      "label": "Ручка",
+      "size": "L",
+      "role": "background",
+      "figmaNodeId": "24:6747",
+      "sourceFrameName": "Ручка",
+      "sourceDimensions": {
+        "width": 508.43,
+        "height": 285.4
+      },
+      "suggestedSvgPath": "assets/L/background/pen.svg",
+      "tags": [
+        "ручка",
+        "записи",
+        "творчество",
+        "pen",
+        "writing"
+      ]
+    },
+    {
+      "id": "pen-s-main",
+      "concept": "pen",
+      "label": "Ручка",
+      "size": "S",
+      "role": "main",
+      "figmaNodeId": "24:4287",
+      "sourceFrameName": "Group 2136136336",
+      "sourceDimensions": {
+        "width": 254.21,
+        "height": 142.7
+      },
+      "suggestedSvgPath": "assets/S/main/pen.svg",
+      "tags": [
+        "ручка",
+        "записи",
+        "творчество",
+        "pen",
+        "writing"
+      ]
+    },
+    {
+      "id": "pen-s-background",
+      "concept": "pen",
+      "label": "Ручка",
+      "size": "S",
+      "role": "background",
+      "figmaNodeId": "24:7543",
+      "sourceFrameName": "Group 2136136343",
+      "sourceDimensions": {
+        "width": 254.21,
+        "height": 142.7
+      },
+      "suggestedSvgPath": "assets/S/background/pen.svg",
+      "tags": [
+        "ручка",
+        "записи",
+        "творчество",
+        "pen",
+        "writing"
+      ]
+    }
+  ],
+  "palettes": [
+    {
+      "id": "palette-1",
+      "figmaNodeId": "21:29569",
+      "backgroundColorRoles": [
+        "#D7CDF5",
+        "#AA9BF0",
+        "#7864D7"
+      ],
+      "objectOnlyColorRoles": [
+        "#F9ECB0",
+        "#F9A3AA",
+        "#FFE3E1"
+      ],
+      "neutralRoles": {
+        "outline": "#181817",
+        "white": "#FFFFFF"
+      }
+    },
+    {
+      "id": "palette-2",
+      "figmaNodeId": "21:29570",
+      "backgroundColorRoles": [
+        "#FDD7B9",
+        "#FAC896",
+        "#D27532"
+      ],
+      "objectOnlyColorRoles": [
+        "#F9ECB0",
+        "#80DADA",
+        "#BEEBEB"
+      ],
+      "neutralRoles": {
+        "outline": "#181817",
+        "white": "#FFFFFF"
+      }
+    },
+    {
+      "id": "palette-3",
+      "figmaNodeId": "21:29579",
+      "backgroundColorRoles": [
+        "#BEEBEB",
+        "#80DADA",
+        "#5ABEBE"
+      ],
+      "objectOnlyColorRoles": [
+        "#FFD4F2",
+        "#6D7BFC",
+        "#B6C6FE"
+      ],
+      "neutralRoles": {
+        "outline": "#181817",
+        "white": "#FFFFFF"
+      }
+    }
+  ],
+  "exampleCompositions": [
+    {
+      "figmaNodeId": "24:2437",
+      "width": 1000,
+      "height": 1000,
+      "namedElements": [
+        "Книга",
+        "Телефон"
+      ]
+    },
+    {
+      "figmaNodeId": "24:2654",
+      "width": 1000,
+      "height": 1000,
+      "namedElements": [
+        "Лампа",
+        "Кошелек",
+        "Монета"
+      ]
+    },
+    {
+      "figmaNodeId": "24:2914",
+      "width": 1000,
+      "height": 1000,
+      "namedElements": [
+        "Ручка",
+        "Книга",
+        "Пазлы"
+      ]
+    },
+    {
+      "figmaNodeId": "24:3057",
+      "width": 1000,
+      "height": 1000,
+      "namedElements": [
+        "Папка",
+        "Кошелек",
+        "Монета"
+      ]
+    },
+    {
+      "figmaNodeId": "24:3312",
+      "width": 1000,
+      "height": 1000,
+      "namedElements": [
+        "конфетти",
+        "Телефон",
+        "Пазлы"
+      ]
+    },
+    {
+      "figmaNodeId": "24:3592",
+      "width": 1000,
+      "height": 1000,
+      "namedElements": [
+        "конфетти",
+        "Наушники",
+        "Group 2136136347"
+      ]
+    },
+    {
+      "figmaNodeId": "24:7656",
+      "width": 1200,
+      "height": 630,
+      "namedElements": [
+        "Телефон",
+        "Пазлы"
+      ]
+    },
+    {
+      "figmaNodeId": "24:8002",
+      "width": 1200,
+      "height": 630,
+      "namedElements": [
+        "Книга",
+        "Телефон"
+      ]
+    },
+    {
+      "figmaNodeId": "24:8070",
+      "width": 1200,
+      "height": 630,
+      "namedElements": [
+        "Папка",
+        "Монета",
+        "Кошелек"
+      ]
+    },
+    {
+      "figmaNodeId": "24:8127",
+      "width": 1200,
+      "height": 630,
+      "namedElements": [
+        "Наушники",
+        "Group 2136136347"
+      ]
+    },
+    {
+      "figmaNodeId": "24:8191",
+      "width": 1200,
+      "height": 630,
+      "namedElements": [
+        "Лампа",
+        "Монета",
+        "Кошелек"
+      ]
+    },
+    {
+      "figmaNodeId": "24:8248",
+      "width": 1200,
+      "height": 630,
+      "namedElements": [
+        "Ручка",
+        "Книга",
+        "Пазлы"
+      ]
+    },
+    {
+      "figmaNodeId": "24:9802",
+      "width": 800,
+      "height": 1200,
+      "namedElements": [
+        "Телефон",
+        "Пазлы"
+      ]
+    },
+    {
+      "figmaNodeId": "24:9813",
+      "width": 800,
+      "height": 1200,
+      "namedElements": [
+        "Книга",
+        "Телефон"
+      ]
+    },
+    {
+      "figmaNodeId": "24:9829",
+      "width": 800,
+      "height": 1200,
+      "namedElements": [
+        "Папка",
+        "Монета",
+        "Кошелек"
+      ]
+    },
+    {
+      "figmaNodeId": "24:9833",
+      "width": 800,
+      "height": 1200,
+      "namedElements": [
+        "Наушники",
+        "Group 2136136347"
+      ]
+    },
+    {
+      "figmaNodeId": "24:9844",
+      "width": 800,
+      "height": 1200,
+      "namedElements": [
+        "Лампа",
+        "Монета",
+        "Кошелек"
+      ]
+    },
+    {
+      "figmaNodeId": "24:9848",
+      "width": 800,
+      "height": 1200,
+      "namedElements": [
+        "Ручка",
+        "Книга",
+        "Пазлы"
+      ]
+    }
+  ]
+}
