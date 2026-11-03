@@ -23,7 +23,7 @@
         <p>Выбранный профиль и модель будут использоваться при подборе композиции.</p>
         <label for="ai-profile">Провайдер</label>
         <select id="ai-profile" @bind="ActiveProfileId" @bind:after="ActivateProfile">
-            <option value="chatgpt">ChatGPT — официальный OAuth</option>
+            <option value="chatgpt">ChatGPT — личный план (локальное демо)</option>
             @foreach (var profile in Profiles)
             {
                 <option value="@profile.Id">@profile.DisplayName — @ProviderDisplayName(profile.ProviderKind)</option>
@@ -53,8 +53,9 @@
         }
 
         <hr />
-        <h2>ChatGPT через официальный OAuth</h2>
-        <p>Вход открывается в системном браузере и не требует API-ключа. Доступ определяется правилами OpenAI и лимитами аккаунта.</p>
+        <h2>ChatGPT OAuth для локальной демо-проверки</h2>
+        <p>Вход открывается в системном браузере. API-ключ не нужен; использование доступного плана ChatGPT требует отдельного согласия в окне OpenAI.</p>
+        <p class="note"><strong>Только для локального демо.</strong> Запросы могут расходовать общий лимит вашего аккаунта ChatGPT и зависят от его доступности. Не используйте этот путь как production API и не объединяйте/не перепродавайте лимиты. Для production подключайте API с отдельным биллингом; удалённое или коммерческое использование ChatGPT plan требует отдельного допуска по действующим правилам OpenAI.</p>
         @if (Connected)
         {
             <p class="message">Подключено@(Email is null ? "" : $": {Email}")</p>
